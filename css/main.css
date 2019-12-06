@@ -1,0 +1,44 @@
+button {
+  display: block;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+section {
+  padding-top: 60px;
+}
+
+.btn-subcategory,
+.btn-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.streched {
+  width: 100%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-calc {
+  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.input-calc {
+  border-radius: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+
+/* .last-notes {
+  
+} */
