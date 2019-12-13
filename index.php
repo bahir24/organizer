@@ -1,23 +1,28 @@
 <?php
-
+//Подключаем файл с классами
 require_once 'classes.php';
-
-
+//Создаем экземпляр Organizer
+//При запуске определяется необходимый файл БД
+//и обновляется актуальное значение id
 $db = new Organizer();
 
+//Массив для тестов
 $arrExpense['id'] = $db->newId;
 $arrExpense['category'] = 'Одежда и обувь';
 $arrExpense['subCategory'] = 'Куртка зимняя';
 $arrExpense['sum'] = '5430';
 $arrExpense['desc'] = 'Старая порвалась';
 
-// $db->addExpense($arrExpense);
+//Примеры вызовов
+//Добавляем новую запись
+# $db->addExpense($arrExpense);
+//Удаляем запись
+# $db->deleteExpense(1);
+//Получаем все строки
+# $db->watchDev();
 
-
-// $db->deleteExpense(1);
-
+//Закрываем соединение с базой
 $db->close();
-
 ?>
 
 
