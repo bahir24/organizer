@@ -5,6 +5,7 @@ class Organizer extends SQLite3 {
   //Нужна для присваивания уникального значения полю
   //id в теле запроса SQL
   public $newId = 0;
+  
 
 
   //При вызове экземпляра класса определяется файл БД
@@ -18,7 +19,7 @@ class Organizer extends SQLite3 {
   //Метод класса, обновляющий актуальное значение id
   function getLastId() {
     $lastIndexQuery = $this->query('SELECT MAX(id) AS last_id FROM expense');
-    $lastIndex = $lastIndexQuery->fetchArray()[last_id];
+    $lastIndex = $lastIndexQuery->fetchArray()['last_id'];
     $this->newId = ++$lastIndex;
   }
 

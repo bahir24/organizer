@@ -22,6 +22,8 @@ $arrExpense['desc'] = 'Старая порвалась';
 # $db->watchDev();
 
 //Закрываем соединение с базой
+
+echo 'front controller';
 $db->close();
 ?>
 

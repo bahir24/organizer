@@ -6,3 +6,12 @@ dist
 *.log
 article.txt
 schema_images
+log
+bin
+client_body_temp
+fastcgi_temp
+include
+lib
+scgi_temp
+share
+uwsgi_temp
