@@ -1,8 +1,8 @@
 <?php
   define('ROOT', __DIR__);
-  require_once ROOT.'/app/models/classes.php';
+  require_once ROOT.'/app/models/router.php';
 
 // echo '<br>'.'запрос:'.($_SERVER['REQUEST_URI']);
-  echo ROOT;
+  Route::start();
 
 ?>
