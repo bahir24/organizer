@@ -12,7 +12,7 @@ class Organizer extends SQLite3 {
   //Обновляется значение актуального id
   function __construct() {
     $this->open('data_base/organizer.db');
-    $this->watchDev();
+    // $this->watchDev();
     $this->getLastId();
   }
 
