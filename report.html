@@ -33,41 +33,37 @@
   <section class="report">
     <div class="container">
       <div class="row">
-        <div class="col">          
-          <div class="row mb-5">            
-            <div class="col pr-0">
-              <h6 class="chart-head mb-3">Продолжительность отчетного периода</h6>
-              <div class="btn-group btn-group-toggle streched" data-toggle="buttons">
-                <label class="btn btn-outline-secondary">
-                  <input type="radio" name="options" id="option1" autocomplete="off" checked>День
-                </label>
-                <label class="btn btn-outline-secondary">
-                  <input type="radio" name="options" id="option2" autocomplete="off">Неделя
-                </label>
-                <label class="btn btn-outline-secondary rounded-0">
-                  <input type="radio" name="options" id="option3" autocomplete="off">Месяц
-                </label>
-              </div>
-            </div>
-            <div class="col pl-0">
-              <h6 class="chart-head mb-3 text-right">Даты отчетного периода</h6>
-              <input type="text" class="form-control input-50">
-            </div>
+        <div class="col-3 pr-0">
+          <h6 class="chart-head mb-3">Продолжительность отчетного периода</h6>
+          <div class="btn-group btn-group-toggle streched" data-toggle="buttons">
+            <label class="btn btn-outline-secondary">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked>День
+            </label>
+            <label class="btn btn-outline-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off">Неделя
+            </label>
+            <label class="btn btn-outline-secondary rounded-0">
+              <input type="radio" name="options" id="option3" autocomplete="off">Месяц
+            </label>
           </div>
-          <div id="chartdiv"></div>
         </div>
-        <div class="col">
-
+        <div class="col-3 pl-0">
+          <h6 class="chart-head mb-3 text-right">Даты отчетного периода</h6>
+          <input type="text" class="form-control input-50">
         </div>
       </div>
+      <div class="row">
+        <div id="chartdiv"></div>
+      </div>
+    </div>
     </div>
   </section>
 
-//Initial changes
+  <!-- Initial changes -->
 
-<script src="/lib/core.js"></script>
-<script src="/lib/charts.js"></script>
-<script src="/lib/maps.js"></script>
+  <script src="/lib/core.js"></script>
+  <script src="/lib/charts.js"></script>
+  <script src="/lib/maps.js"></script>
 
   <script src="/js/jquery.slim.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>
@@ -76,8 +72,8 @@
   <script src="js/daterangepicker.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/chart.js"></script>
-  
-  
+
+
 </body>
 
 </html>
