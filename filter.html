@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/daterangepicker.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Organizer</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Добавить расход</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="report.html">Отчет</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Все раходы</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Настройка</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <section class="filter">
+    <div class="container">
+      <div class="row">
+        
+      </div>
+      <div class="row filter-input mb-2">
+        <h2 class="col__head mb-2 text-center">Последние записи</h2>
+        <div class="col-2">
+          <form>
+            <div class="form-group">
+              <label for="startDate">С даты</label>
+              <input type="text" class="form-control" id="startDate" aria-describedby="emailHelp"
+                placeholder="Начало">              
+            </div>
+            <div class="form-group">
+              <label for="endDate">До даты</label>
+              <input type="text" class="form-control" id="endDate" placeholder="Конец">
+            </div>          
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Дата</th>
+              <th scope="col">Изменено</th>
+              <th scope="col">Категория</th>
+              <th scope="col">Подкатегория</th>
+              <th scope="col">Цена</th>
+              <th scope="col">Количество</th>
+              <th scope="col">Сумма</th>
+              <th scope="col">Примечание</th>
+              <th scope="col">Заметка</th>
+              <th scope="col">Действия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">10.12.2019</th>
+              <td>02.01.2020</td>
+              <td>Еда</td>
+              <td>Овощи</td>
+              <td>50р</td>
+              <td>3шт</td>
+              <td>150р</td>
+              <td>На салат</td>
+              <td>Купить подарки</td>
+              <td>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
+                    alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
+                    alt="delete"></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

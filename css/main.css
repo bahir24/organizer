@@ -3,11 +3,11 @@ button {
 }
 
 .header {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 section {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 .btn-subcategory,
@@ -21,9 +21,14 @@ section {
   width: 100%;
 }
 
+.expense-comment {
+  height: 100%;
+}
+
+
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 .btn-calc {
@@ -70,3 +75,7 @@ section {
   /* padding-top: 10%; */
   width: 100%;
 }
+
+/* .filter-input { */
+  /* min-height: 20vh; */
+/* } */
