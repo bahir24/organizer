@@ -34,7 +34,7 @@
     <div class="container">
       <div class="row">
         <div class="col-3">
-          <h2 class="col__head mb-5">Добавить запись</h2>
+          <h2 class="col-12 mb-5">Добавить запись</h2>
           <form>
             <div class="form-group">             
               <div class="input-group mb-2">

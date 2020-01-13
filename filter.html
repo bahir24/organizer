@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/daterangepicker.min.css">
+  <link rel="stylesheet" href="/lib/jquery-ui-1.12.1.custom/jquery-ui.css">
   <link rel="stylesheet" href="/css/main.css">
   <title>Organizer</title>
 </head>
-  
+
 <body>
   <header class="header">
     <div class="container">
@@ -32,26 +32,118 @@
   </header>
   <section class="filter">
     <div class="container">
-      <div class="row">
-        
-        
-      </div>
       <div class="row filter-input mb-2">
-        <h2 class="col__head mb-2 text-center">Последние записи</h2>
-        <div class="col-2">
-          <form>
-            <div class="form-group">
-              <label for="startDate">С даты</label>
-              <input type="text" class="form-control" id="startDate" aria-describedby="emailHelp"
-                placeholder="Начало">              
+        <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
+        <form class="filter" action="sdfsdfd/sdfsfdsdf">
+          <div class="row">
+            <div class="col-2">
+              <h6>По дате создания</h6>
+              <div class="form-group">
+                <input type="date" name="startCreateDate" class="form-control" id="startCreateDate" aria-describedby="emailHelp"
+                  placeholder="Начало">
+              </div>
+              <div class="form-group">
+                <input type="date" name="endCreateDate" class="form-control" id="endCreateDate" placeholder="Конец">
+              </div>
             </div>
-            <div class="form-group">
-              <label for="endDate">До даты</label>
-              <input type="text" class="form-control" id="endDate" placeholder="Конец">
-            </div>          
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
+            <div class="col-2">
+              <h6>По дате изменения</h6>
+              <div class="form-group">
+                <input type="text" class="form-control" id="startUpdateDate" aria-describedby="emailHelp"
+                  placeholder="Начало">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="endUpdateDate" placeholder="Конец">
+              </div>
+            </div>
+            <div class="col-2">
+              <h6>По принадлежности</h6>
+              <div class="form-group">
+                <div class="input-group mb-2">                  
+                    <div class="btn-group dropright w-100">
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category" id="cathegoryBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Категория
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Еда</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Хозяйственные расходы</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Одежда и обувь</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Регулярные платежи</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Авто</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Отдых</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Вредные привычки</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Крупные расходы</a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group mb-2">                  
+                    <div class="btn-group dropright w-100">
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category" id="subCathegoryBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Подкатегория
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Еда</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Хозяйственные расходы</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Одежда и обувь</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Регулярные платежи</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Авто</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Отдых</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Вредные привычки</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Крупные расходы</a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2">
+              <h6>По цене</h6>
+              <div class="form-group">
+                <input type="text" class="form-control" id="minPrice" aria-describedby="emailHelp"
+                  placeholder="От">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="maxPrice" placeholder="До">
+              </div>
+            </div>
+            <div class="col-2">
+              <h6>По количеству</h6>
+              <div class="form-group">
+                <input type="text" class="form-control" id="minquantity" aria-describedby="emailHelp"
+                  placeholder="От">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="maxquantity" placeholder="До">
+              </div>
+            </div>
+            <div class="col-2">
+              <h6>По стоимости</h6>
+              <div class="form-group">
+                <input type="text" class="form-control" id="minSum" aria-describedby="emailHelp"
+                  placeholder="От">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="maxSum" placeholder="До">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
+        </form>
       </div>
       <div class="row">
         <table class="table table-striped">
@@ -79,12 +171,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -96,12 +188,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -113,12 +205,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -130,12 +222,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -147,12 +239,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -164,12 +256,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -181,12 +273,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -198,12 +290,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -215,12 +307,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -232,12 +324,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -249,12 +341,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -266,12 +358,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -283,12 +375,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -300,12 +392,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -317,12 +409,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -334,12 +426,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -351,12 +443,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -368,12 +460,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -385,12 +477,12 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
             <tr>
@@ -402,19 +494,21 @@
               <td>3шт</td>
               <td>150р</td>
               <td>На салат</td>
-              <td>Купить подарки</td>
+              <td>Купить</td>
               <td>
-                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg" class="icon"
-                    alt="edit"></button>
-                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg" class="icon"
-                    alt="delete"></button>
+                <button type="button" class="btn btn-outline-success btn-sm py-0 px-1"><img src="/img/edit.svg"
+                    class="icon" alt="edit"></button>
+                <button type="button" class="btn btn-outline-danger btn-sm py-0 px-1"><img src="/img/exit.svg"
+                    class="icon" alt="delete"></button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-  </section>
+  </section>  
+    <script src="/js/jquery.slim.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

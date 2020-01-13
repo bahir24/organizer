@@ -79,3 +79,14 @@ section {
 /* .filter-input { */
   /* min-height: 20vh; */
 /* } */
+
+.filter {
+  width: 100%;
+}
+
+td,
+th {
+  width: 10%;
+  position: relative;
+  overflow: hidden;
+}
