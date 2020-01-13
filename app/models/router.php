@@ -7,5 +7,9 @@ class Route {
     echo "<pre>";
     print_r($arrRoutes);
     echo "</pre>";
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+    
   }
 }
