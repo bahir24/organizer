@@ -19,7 +19,7 @@
     }
 
     function halfPageShow($pageLayout, $sectionFeatures, $varContent, $arrExpenses) {     
-      $contentElem = $this->halfPageBuild($pageLayout, $sectionFeatures, $varContent, $arrExpenses);
+      include 'app/views/layout.php';
       
     }
 

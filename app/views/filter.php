@@ -115,7 +115,7 @@
     <div class="row">
 
      <?php
-      $contentElem
+      include 'app/views/table.php';
       ?>
 
     </div>

@@ -23,39 +23,35 @@
   </thead>
   <tbody>
     <?php
-    // echo "<pre>";
-    // print_r($arrExpenses);
-    // echo "</pre>";
-
     foreach($arrExpenses as $row) {
       $row->purchaseDate = $row::dateFormat($row->purchaseDate);
       $row->updatedDate = $row::dateFormat($row->updatedDate);
-echo "<tr>
-        <th scope='row'>$row->purchaseDate</th>
-        <td>$row->updatedDate</td>
-        <td>$row->categoryName</td>
-        <td>$row->subcategoryName</td>
-        <td>$row->price</td>
-        <td>$row->quantity</td>
-        <td>$row->sum</td>
-        <td>$row->description</td>
-        <td>$row->notes</td>
-        <td>
-          <form class='d-inline-block' action='edit' method='POST'>
-            <input type='hidden' name='id' value='$row->id'>
-            <button type='submit' class='btn btn-outline-success btn-sm py-0 px-1'>
-            <img src='/img/edit.svg' class='icon' alt='edit'>
-            </button>
-          </form>
-          <form class='d-inline-block' action='delete' method='POST'>
-            <input type='hidden' name='id' value='$row->id'>
-            <button type='submit' class='btn btn-outline-danger btn-sm py-0 px-1'>
-            <img src='/img/exit.svg' class='icon' alt='delete'>
-            </button>
-          </form>
-        </td>
-    </tr>";
-    }
-    ?>
+      echo "<tr>
+              <th scope='row'>$row->purchaseDate</th>
+              <td>$row->updatedDate</td>
+              <td>$row->categoryName</td>
+              <td>$row->subcategoryName</td>
+              <td>$row->price</td>
+              <td>$row->quantity</td>
+              <td>$row->sum</td>
+              <td>$row->description</td>
+              <td>$row->notes</td>
+              <td>
+                <form class='d-inline-block' action='expenses/edit' method='POST'>
+                  <input type='hidden' name='id' value='$row->id'>
+                  <button type='submit' class='btn btn-outline-success btn-sm py-0 px-1'>
+                  <img src='/img/edit.svg' class='icon' alt='edit'>
+                  </button>
+                </form>
+                <form class='d-inline-block' action='expenses/delete' method='POST'>
+                  <input type='hidden' name='id' value='$row->id'>
+                  <button type='submit' class='btn btn-outline-danger btn-sm py-0 px-1'>
+                  <img src='/img/exit.svg' class='icon' alt='delete'>
+                  </button>
+                </form>
+              </td>
+          </tr>";
+          }
+          ?>
   </tbody>
 </table>
