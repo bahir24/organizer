@@ -32,7 +32,7 @@
   </header>
 
   <?php
-  echo $sectionSpecify;
+  $sectionSpecify;
   ?>
 
   <script src="/js/jquery.slim.min.js"></script>

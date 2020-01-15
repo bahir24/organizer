@@ -16,5 +16,18 @@ class expensesController extends Controller {
     $this->view->halfPageShow($pageTemplate, $sectionSpecify, $table, $rezult);
     
   }
+
+  public function editAction() {
+    echo "EDIT!";
+    print_r($_POST);
+  }
+
+  public function deleteAction() {
+    echo "DELETE!";
+    echo "<br>";
+    print_r($_POST);
+    echo "<br>";
+    echo "вызвать основное действие";
+  }
   
 }
