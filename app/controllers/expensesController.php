@@ -1,13 +1,13 @@
 <?php
 
-class expensesController extends controller {
+class expensesController extends Controller {
   
   public function __construct() {
     //  parent::__construct();
     $this->store = new ExpensesStore($this->db);
     $this->view = new View();
   }
-  public function getAction() {
+  public function indexAction() {
     
     $rezult = $this->store->getAll();
     $pageTemplate = "layout";

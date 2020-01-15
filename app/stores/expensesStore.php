@@ -41,8 +41,12 @@ class ExpensesStore extends StoreBase
                 LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId";
 
         $query = $this->pdo->query($sql);
+        //Используем пространство имен именно этого класса
+        if(class_exists('Expense')) {            
+        
         $query->setFetchMode(PDO::FETCH_CLASS, Expense::class);
+        
         return $query->fetchAll();
-       
+        }
     }
 }

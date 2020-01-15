@@ -18,7 +18,7 @@
       }
     }
 
-    function halfPageShow($pageLayout, $sectionFeatures, $varContent, $arrExpenses) {
+    function halfPageShow($pageLayout, $sectionFeatures, $varContent, $arrExpenses) {     
       echo $this->halfPageBuild($pageLayout, $sectionFeatures, $varContent, $arrExpenses);
     }
 
