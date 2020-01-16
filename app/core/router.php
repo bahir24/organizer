@@ -24,7 +24,8 @@ class Route {
 			include "app/controllers/".$ctrlFile;
 		} else {
 			Route::ErrorPage404();
-    }    
+		}
+		
 		$ctrl = new $ctrlName;
 		$act = $actName;
 		if(method_exists($ctrl, $act)) {

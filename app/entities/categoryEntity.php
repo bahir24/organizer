@@ -1,7 +1,5 @@
 <?php
-
-class CategoryEntity
-{
-    public $id;
-    public $name;
-}
+	class CategoryEntity {
+		public $id;
+		public $name;
+	}

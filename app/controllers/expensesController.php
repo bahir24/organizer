@@ -1,20 +1,12 @@
 <?php
 
 class expensesController extends Controller {
+  public $dataTable = "table";
+  public $sectionSpecify = "filter";
   
-  public function __construct() {
-    //  parent::__construct();
-    $this->store = new ExpensesStore($this->db);
-    $this->view = new View();
-  }
   public function indexAction() {
-    
-    $rezult = $this->store->getAll();
-    $pageTemplate = "layout";
-    $sectionSpecify = "filter";
-    $table = "table";
-    $this->view->halfPageShow($pageTemplate, $sectionSpecify, $table, $rezult);
-    
+    $arrExpenses = $this->store->getAll();        
+    $this->viewBuild->pageRender($this->pageTemplate, $this->sectionSpecify, $this->dataTable, $arrExpenses); 
   }
 
   public function editAction() {

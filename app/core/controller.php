@@ -5,7 +5,11 @@
     public $arrFilter;
     public $viewBuild;
     public $db = 'db/test.db';
-      // function __construct() {
-        // $this->$viewBuild = new View;        
-      // }
+    public $pageTemplate = "layout";
+    public $arrCategories = array();
+    public $arrSubCategories = array();
+      function __construct() {
+        $this->viewBuild = new View;
+        $this->store = new ExpensesStore($this->db);
+      }
   }

@@ -1,8 +1,6 @@
 <?php
-
-class SubcategoryEntity
-{
-    public $id;
-    public $categoryId;
-    public $name;
+class SubcategoryEntity {
+	public $id;
+	public $categoryId;
+	public $name;
 }
