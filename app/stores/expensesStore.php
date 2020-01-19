@@ -11,6 +11,8 @@ class ExpensesStore extends StoreBase {
 	public function add(ExpenseEntity $expense)	{
 		$columns = $this->objectKeysToString($expense, ['id']);
 		$placeholders = $this->objectKeysToPlaceholdersString($expense, ['id']);
+		$expense->purchaseDate = strtotime($expense->purchaseDate);
+
 		$expense->updatedDate = time();
 		$values = $this->objectToValues($expense, ['id']);
 		$sql = "INSERT INTO $this->table($columns) VALUES($placeholders)";

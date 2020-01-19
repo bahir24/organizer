@@ -86,7 +86,9 @@ section {
 
 td,
 th {
-  width: 10%;
+  max-width: 120px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   position: relative;
   overflow: hidden;
 }

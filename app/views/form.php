@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="w-100">
+        <form class="w-100" action="main/addExpense" method="POST" id="formAddExpense">
             <div class="form-group">
             <div class="input-group mb-2">
               <div class="btn-group dropright w-100 btn-group-category">
@@ -49,14 +49,14 @@
             <div class="input-group mb-2">
               <label class="streched">
                 <h6 class="mb-1">Дата</h6>
-                <input type="text" class="form-control expense-day">
+                <input type="date" name="purchaseDate" class="form-control expense-day" value="<?php echo date("Y-m-d") ?>">
               </label>
             </div>
             <div class="input-group mb-2">
               <label class="streched">
                 <h6 class="mb-1">Стоимость</h6>
                 <div class="d-flex">
-                  <input type="text" class="form-control input-calc">
+                  <input type="text" name="price" class="form-control input-calc">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary btn-calc" type="button">
                       <img src="/img/calc.svg" class="icon" alt="calc">
@@ -68,7 +68,7 @@
             <div class="input-group">
               <label class="streched">
                 <h6 class="mb-1">Примечание</h6>
-                <textarea class="form-control h-100"></textarea>
+                <textarea name="description" class="form-control h-100"></textarea>
               </label>
             </div>
           </div>
@@ -76,7 +76,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-success btn-lg">Записать</button>
+        <button type="submit" form="formAddExpense" class="btn btn-success btn-lg">Записать</button>
       </div>
     </div>
   </div>

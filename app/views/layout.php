@@ -15,7 +15,7 @@
     <div class="container">
       <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-          <a class="nav-link" href="">Добавить расход</a>
+          <a class="nav-link" href="/">Добавить расход</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="report">Отчет</a>

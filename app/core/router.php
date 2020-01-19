@@ -2,7 +2,8 @@
 class Route {
   static function start() {
     $ctrlName = 'main';
-    $actName = 'index';
+		$actName = 'index';
+		$modName = 'expenses';
     $arrRoutes = explode('/', $_SERVER['REQUEST_URI']);
     if (!empty($arrRoutes[1])) {	
 			$ctrlName = $arrRoutes[1];
@@ -10,7 +11,7 @@ class Route {
     if (!empty($arrRoutes[2])) {
 			$actName = $arrRoutes[2];
     }
-    $modName = $ctrlName.'Store';
+    $modName = $modName.'Store';
 		$ctrlName = $ctrlName.'Controller';
     $actName = $actName.'Action';
     $modFile = $modName.'.php';

@@ -6,10 +6,7 @@
       <th scope="col">Категория</th>
       <th scope="col">Подкатегория</th>
       <th scope="col">Цена</th>
-      <th scope="col">Количество</th>
-      <th scope="col">Сумма</th>
       <th scope="col">Примечание</th>
-      <th scope="col">Заметка</th>
       <th scope="col">Действия</th>
     </tr>
   </thead>
@@ -24,10 +21,7 @@
               <td>$row->categoryName</td>
               <td>$row->subcategoryName</td>
               <td>$row->price</td>
-              <td>$row->quantity</td>
-              <td>$row->sum</td>
               <td>$row->description</td>
-              <td>$row->notes</td>
               <td>
                 <form class='d-inline-block' action='expenses/edit' method='POST'>
                   <input type='hidden' name='id' value='$row->id'>
