@@ -4,6 +4,7 @@ class StoreBase {
 	protected $pdo;
 	protected $table;
 	protected $entity;
+	public $db = 'db/test.db';
 
 	public function __construct($db, $table) {
 		$this->table = $table;
@@ -42,6 +43,8 @@ class StoreBase {
 		$query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
 		return $query->fetchAll();
 	}
+
+	
 
 	public function delete(int $id) {
 		$sql = "DELETE FROM $this->table WHERE id = $id";

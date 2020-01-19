@@ -16,7 +16,7 @@ class Route {
     $modFile = $modName.'.php';
 		$modPath = "app/stores/".$modFile;
 		if(file_exists($modPath))	{
-			include "app/stores/".$modFile;			
+			include "app/stores/".$modFile;
 		}		   
     $ctrlFile = $ctrlName.'.php';
 		$ctrlPath = "app/controllers/".$ctrlFile;

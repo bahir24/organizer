@@ -15,23 +15,23 @@
     <div class="container">
       <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Добавить расход</a>
+          <a class="nav-link" href="">Добавить расход</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="report.html">Отчет</a>
+          <a class="nav-link" href="report">Отчет</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Все раходы</a>
+          <a class="nav-link" href="expenses">Все раходы</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Настройка</a>
+          <a class="nav-link" href="categories">Настройка</a>
         </li>
       </ul>
     </div>
   </header>
 
   <?php
-  include 'app/views/filter.php';
+  include "app/views/$sectionFeatures.php";
   ?>
 
   <script src="/js/jquery.slim.min.js"></script>

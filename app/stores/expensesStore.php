@@ -3,8 +3,9 @@
 class ExpensesStore extends StoreBase {
 	protected $entity = ExpenseEntity::class;
 
-	public function __construct($db) {
+	function __construct($db) {
 		parent::__construct($db, 'expenses');
+	
 	}
 
 	public function add(ExpenseEntity $expense)	{
@@ -34,4 +35,12 @@ class ExpensesStore extends StoreBase {
 		return $query->fetchAll();
 		}
 	}
+
+	public function getByFilter($queryParams) {
+		$query = $this->pdo->query($queryParams);
+		if(class_exists('Expense')) {            		
+		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);		
+		return $query->fetchAll();
+	}
+}
 }

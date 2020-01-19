@@ -1,12 +1,13 @@
 <?php
-require_once 'application/entities/categoryEntity.php';
+// require_once 'application/entities/categoryEntity.php';
 
 	class CategoryStore extends StoreBase {
-    protected $entity = CategoryEntity::class;
+		protected $entity = CategoryEntity::class;
 
-    public function __construct($db) {
-			parent::__construct($db, 'categories');
-    }
+
+		public function __construct() {
+		parent::__construct($this->db, 'categories');
+		}
 
     public function add($name) {   
 			$sql = "INSERT INTO $this->table(name) VALUES (:name)";
