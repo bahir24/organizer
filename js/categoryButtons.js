@@ -24,5 +24,3 @@ function changeHeadSub(selectedSublink) {
   subCategoryButton.children[0].textContent = selectedSublink.textContent;
   subCategoryButton.children[2].value = selectedSublink.dataset.id;
 }
-
-
