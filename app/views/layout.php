@@ -34,6 +34,8 @@
   include "app/views/$sectionFeatures.php";
   ?>
 
+  <script src="/js/categoryButtons.js"></script>
+  <!-- <script src="/js/categoryButtonsModal.js"></script> -->
   <script src="/js/jquery.slim.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>
 </body>

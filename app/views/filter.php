@@ -2,8 +2,7 @@
   <div class="container">
     <div class="row filter-input mb-2">
       <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
-     
-      <form class="filter" action="expenses/filter" method="POST">
+      <form class="filter" action="main/filter" method="POST">
         <div class="row">
           <div class="col-2">
             <h6>По дате создания</h6>
@@ -18,8 +17,8 @@
           <div class="col-2">
             <h6>По дате изменения</h6>
             <div class="form-group">
-              <input type="date" name="startUpdateDate" class="form-control" id="startUpdateDate" aria-describedby="emailHelp"
-                placeholder="Начало">
+              <input type="date" name="startUpdateDate" class="form-control" id="startUpdateDate"
+                aria-describedby="emailHelp" placeholder="Начало">
             </div>
             <div class="form-group">
               <input type="date" name="endUpdateDate" class="form-control" id="endUpdateDate" placeholder="Конец">
@@ -30,17 +29,17 @@
             <div class="form-group">
               <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-category">
-                  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category" id="cathegoryBtn"
+                  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Категория
                   </button>
                   <div class="dropdown-menu">
-                  <?php
-                      foreach ($arrCategories as $categoryName) {                        
-                          echo "<a class='dropdown-item' data-id='$categoryName->id' href='#' onclick='changeHead(this)'>$categoryName->name</a>
+                    <?php
+                      foreach ($arrCategories as $categoryName) {
+                          echo "<button type='button' class='dropdown-item' data-id='$categoryName->id' onclick='changeHead(this)'>$categoryName->name</button>
                               <div class='dropdown-divider'></div>";
                       }
-                    ?>                          
+                    ?>
                   </div>
                   <input type='hidden' name="categoryId" value="">
                 </div>
@@ -50,17 +49,17 @@
               <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-subcategory">
                   <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
-                    id="subCathegoryBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                     Подкатегория
                   </button>
                   <div class="dropdown-menu">
                     <?php
                     
                       foreach ($arrSubcategories as $subcategoryName) {
-                          echo "<a class='dropdown-item' data-id='$subcategoryName->id' data-category-id='$subcategoryName->categoryId' href='#' onclick='changeHeadSub(this)'>$subcategoryName->name</a>
+                          echo "<button type='button' class='dropdown-item' data-id='$subcategoryName->id' data-category-id='$subcategoryName->categoryId' onclick='changeHeadSub(this)'>$subcategoryName->name</button>
                               <div class='dropdown-divider'></div>";
                       }
-                    ?>                                               
+                    ?>
                   </div>
                   <input type='hidden' name="subcategoryId" value="">
                 </div>
@@ -70,7 +69,8 @@
           <div class="col-2">
             <h6>По цене</h6>
             <div class="form-group">
-              <input type="text" class="form-control" id="startPrice" aria-describedby="emailHelp" placeholder="От" name="startPrice">
+              <input type="text" class="form-control" id="startPrice" aria-describedby="emailHelp" placeholder="От"
+                name="startPrice">
             </div>
             <div class="form-group">
               <input type="text" class="form-control" id="endPrice" placeholder="До" name="endPrice">
@@ -79,7 +79,8 @@
           <div class="col-2">
             <h6>По количеству</h6>
             <div class="form-group">
-              <input type="text" class="form-control" id="startQuantity" aria-describedby="emailHelp" placeholder="От" name="startQuantity">
+              <input type="text" class="form-control" id="startQuantity" aria-describedby="emailHelp" placeholder="От"
+                name="startQuantity">
             </div>
             <div class="form-group">
               <input type="text" class="form-control" id="endQuantity" placeholder="До" name="endQuantity">
@@ -88,23 +89,35 @@
           <div class="col-2">
             <h6>По стоимости</h6>
             <div class="form-group">
-              <input type="text" class="form-control" id="startSum" aria-describedby="emailHelp" placeholder="От" name="startSum">
+              <input type="text" class="form-control" id="startSum" aria-describedby="emailHelp" placeholder="От"
+                name="startSum">
             </div>
             <div class="form-group">
               <input type="text" class="form-control" id="endSum" placeholder="До" name="endSum">
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
+        <div class="row">
+          <div class="col-4">
+            <button type="reset" class="btn btn-secondary btn-lg btn-block">Сбросить фильры</button>
+          </div>
+          <div class="col-4">
+            <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal"
+              data-target="#addExpense">Добавить расход</button>
+          </div>
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
+          </div>
+        </div>
+        <?php
+          include 'app/views/form.php';
+        ?>
       </form>
     </div>
     <div class="row">
-
-     <?php
+      <?php
       include 'app/views/table.php';
-      ?>
-
+    ?>
     </div>
   </div>
 </section>
-<script src="/js/categoryButtons.js"></script>

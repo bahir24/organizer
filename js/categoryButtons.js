@@ -1,14 +1,16 @@
-const categoryButton = document.querySelector('.btn-group-category');
-const subCategoryButton = document.querySelector('.btn-group-subcategory');
 
 
 function changeHead(selectedLink) {
+  let currentElement = selectedLink.closest('.form-group');
+  let slaveElement = currentElement.nextElementSibling;
+  let categoryButton = currentElement.querySelector('.btn-group-category');
+  let subCategoryButton = slaveElement.querySelector('.btn-group-subcategory');
   categoryButton.children[0].textContent = selectedLink.textContent;
   categoryButton.children[2].value = selectedLink.dataset.id;
   subCategoryButton.children[0].removeAttribute('disabled');
   subCategoryButton.children[0].textContent = 'Подкатегория';
   subCategoryButton.children[2].value = '';
-  let subCategoryLinks = (subCategoryButton.children[1].querySelectorAll('a'));
+  let subCategoryLinks = (subCategoryButton.children[1].querySelectorAll('button'));
   for (subCategoryLinksIndex = 0; subCategoryLinksIndex < subCategoryLinks.length; subCategoryLinksIndex++) {
     subcategoryLink = subCategoryLinks[subCategoryLinksIndex];
     subcategoryLink.style.display = 'none'
@@ -21,6 +23,7 @@ function changeHead(selectedLink) {
 }
 
 function changeHeadSub(selectedSublink) {
+  
   subCategoryButton.children[0].textContent = selectedSublink.textContent;
   subCategoryButton.children[2].value = selectedSublink.dataset.id;
 }

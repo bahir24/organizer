@@ -4,7 +4,7 @@
     public $arrExpense;
     public $arrFilter;
     public $viewBuild;
-    public $db = "db/test.db";
+    public $db = "db/organizer.db";
     public $pageTemplate = "layout";
     public $arrCategories = array();
     public $arrSubcategories = array();
