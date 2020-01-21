@@ -24,7 +24,10 @@ class mainController extends Controller
     public function editAction()
     {
         echo "EDIT!";
+        echo "<pre>";
         print_r($_POST);
+        echo "</pre>";
+
     }
 
     public function deleteAction()

@@ -15,21 +15,21 @@
     foreach($this->arrExpense as $row) {
       $row->purchaseDate = $row::dateFormat($row->purchaseDate);
       $row->updatedDate = $row::dateFormat($row->updatedDate);
-      echo "<tr>
+      echo "<tr class='expense-row-$row->id'>
               <th scope='row'>$row->purchaseDate</th>
               <td>$row->updatedDate</td>
-              <td>$row->categoryName</td>
-              <td>$row->subcategoryName</td>
+              <td data-category-id='$row->categoryId'>$row->categoryName</td>
+              <td data-subcategory-id='$row->subcategoryId'>$row->subcategoryName</td>
               <td>$row->price</td>
               <td>$row->description</td>
               <td>
-                <form class='d-inline-block' action='expenses/edit' method='POST'>
-                  <input type='hidden' name='id' value='$row->id'>
-                  <button type='submit' class='btn btn-outline-success btn-sm py-0 px-1'>
+                
+                  
+                  <button type='button' class='btn btn-outline-success btn-sm py-0 px-1'  data-toggle='modal' data-target='#updateExpense' data-id='$row->id' onclick='prepareUpdate(this)'>
                   <img src='/img/edit.svg' class='icon' alt='edit'>
                   </button>
-                </form>
-                <form class='d-inline-block' action='expenses/delete' method='POST'>
+                
+                <form class='d-inline-block' action='main/delete' method='POST'>
                   <input type='hidden' name='id' value='$row->id'>
                   <button type='submit' class='btn btn-outline-danger btn-sm py-0 px-1'>
                   <img src='/img/exit.svg' class='icon' alt='delete'>

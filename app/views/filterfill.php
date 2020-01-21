@@ -1,7 +1,7 @@
 <section class="filter">
   <div class="container">
     <div class="row filter-input mb-2">
-      <h2 class="col-12 mb-2 text-center">Фильтр и сортир</h2>
+      <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
       <form class="filter" action="" method="POST" id="filterQuery">
         <div class="row">
           <div class="col-3">

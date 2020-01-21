@@ -91,6 +91,7 @@
         </div>
         <?php
           include 'app/views/form.php';
+          include 'app/views/formupdate.php';
         ?>
       </form>
     </div>

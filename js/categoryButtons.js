@@ -10,8 +10,7 @@ function changeHead(selectedLink) {
   categoryButton.children[2].value = selectedLink.dataset.id;
   subCategoryButton.children[0].removeAttribute('disabled');
   subCategoryButton.children[0].textContent = 'Подкатегория';
-  subCategoryButton.children[2].value = '';
-  
+  subCategoryButton.children[2].value = '';  
   sortSubcategories(selectedLink);
 }
 
@@ -31,11 +30,8 @@ function sortSubcategories(selectedLink) {
         subcategoryLink.nextElementSibling.style.display = 'block';
       }
     };
-  }
-  
-  
+  }    
 }
-
 
 function changeHeadSub(selectedSublink) {
   let subCategoryButton = selectedSublink.closest('.btn-group-subcategory');
