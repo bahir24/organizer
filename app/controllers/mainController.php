@@ -38,4 +38,12 @@ class mainController extends Controller
         echo "<br>";
         echo "вызвать основное действие";
     }
+    
+    public function addExpenseAction($arrAddExpenseQuery) {
+    $exEntity = new ExpenseEntity;
+    $exEntity->postStrToObject($_POST);
+    $this->store->add($exEntity);
+    header("Location: http://organizer.com/");
+
+  }
 }
