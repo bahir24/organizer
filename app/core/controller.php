@@ -8,14 +8,14 @@
     public $pageTemplate = 'layout';
     public $arrCategories = array();
     public $arrSubcategories = array();
-      function __construct() {
-        $this->viewBuild = new View;
-        $this->viewBuild->pageLayout = $this->pageTemplate;
-        $this->store = new ExpensesStore($this->db);
+
+      function __construct() {        
         $categoryStore = new CategoryStore;
-        $this->arrCategories = $categoryStore->getAll();
         $subCategoryStore = new SubcategoryStore;
+        $this->arrCategories = $categoryStore->getAll();        
         $this->arrSubcategories = $subCategoryStore->getAll();
-        
+        $this->viewBuild = new View;  
+        $this->viewBuild->pageLayout = $this->pageTemplate;
+        $this->store = new ExpensesStore($this->db);      
       }
   }

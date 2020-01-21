@@ -19,8 +19,7 @@
     </div>
   </header>
   <?php
-  echo $this->sectionFeatures;
-  include 'app/views/'."sectionFeatures".".php";
+  include 'app/views/'."$this->sectionFeatures".".php";
   ?>
   <script src="/js/categoryButtons.js"></script>
   <script src="/js/jquery.slim.min.js"></script>
