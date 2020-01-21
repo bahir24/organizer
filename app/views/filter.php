@@ -79,7 +79,7 @@
         </div>
         <div class="row">
           <div class="col-4">
-            <button type="reset" class="btn btn-secondary btn-lg btn-block">Сбросить фильры</button>
+            <button type="reset" onclick="location.href = ''" form="filterQuery" class="btn btn-secondary btn-lg btn-block">Сбросить фильры</button>
           </div>
           <div class="col-4">
             <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal"

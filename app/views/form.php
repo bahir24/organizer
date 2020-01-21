@@ -11,38 +11,42 @@
           <form class="w-100" action="main" method="POST" id="formAddExpense">
               <div class="form-group">
                 <div class="input-group mb-2">
-                  <div class="btn-group dropright w-100 btn-group-category">
-                    <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category" id="cathegoryBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Категория</button>
-                    <div class="dropdown-menu">
+                <div class="btn-group dropright w-100 btn-group-category">
+                  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Категория
+                  </button>
+                  <div class="dropdown-menu">
                     <?php
-                      foreach ($arrCategories as $categoryName) {
-                        echo "<button type='button' class='dropdown-item' data-id='$categoryName->id' onclick='changeHead(this)'>$categoryName->name</button>
-                        <div class='dropdown-divider'></div>";
+                      foreach ($this->arrCategories as $categoryName) {
+                          echo "<button type='button' class='dropdown-item' data-id='$categoryName->id' onclick='changeHead(this)'>$categoryName->name</button>
+                              <div class='dropdown-divider'></div>";
                       }
-                     ?>
-                    </div>
-                    <input type='hidden' form="formAddExpense" name="categoryId" value="">
+                    ?>
                   </div>
+                  <input type='hidden' form="formAddExpense" name="categoryId" value="">
                 </div>
+              </div>
               </div>
               <div class="form-group">
                 <div class="input-group mb-2">
-                  <div class="btn-group dropright w-100 btn-group-subcategory">
-                    <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
-                    id="subCathegoryBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
+                <div class="btn-group dropright w-100 btn-group-subcategory">
+                  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                     Подкатегория
-                    </button>
-                    <div class="dropdown-menu">
-                    <?php                    
-                      foreach ($arrSubcategories as $subcategoryName) {
-                        echo "<button type='button' class='dropdown-item' data-id='$subcategoryName->id' data-category-id='$subcategoryName->categoryId' onclick='changeHeadSub(this)'>$subcategoryName->name</button>
-                        <div class='dropdown-divider'></div>";
+                  </button>
+                  <div class="dropdown-menu">
+                    <?php
+                    
+                      foreach ($this->arrSubcategories as $subcategoryName) {
+                          echo "<button type='button' class='dropdown-item' data-id='$subcategoryName->id' data-category-id='$subcategoryName->categoryId' onclick='changeHeadSub(this)'>$subcategoryName->name</button>
+                              <div class='dropdown-divider'></div>";
                       }
-                    ?>                                        
-                    </div>
-                    <input type='hidden' form="formAddExpense" name="subcategoryId" value="">
+                    ?>
                   </div>
+                  <input type='hidden' form="formAddExpense" name="subcategoryId" value="">
                 </div>
+              </div>
               </div>
               <div class="input-group mb-2">
                 <label class="streched">

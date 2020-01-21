@@ -1,6 +1,7 @@
 //TODO convert to var categoryButton
 
 function changeHead(selectedLink) {
+  
   let currentElement = selectedLink.closest('.form-group');
   let slaveElement = currentElement.nextElementSibling;
   let categoryButton = currentElement.querySelector('.btn-group-category');
@@ -10,12 +11,15 @@ function changeHead(selectedLink) {
   subCategoryButton.children[0].removeAttribute('disabled');
   subCategoryButton.children[0].textContent = 'Подкатегория';
   subCategoryButton.children[2].value = '';
-  sortSubcategories();
+  
+  sortSubcategories(selectedLink);
 }
 
-function sortSubcategories() {
-  let categoryButton = document.querySelector('.btn-group-category');
-  let subCategoryButton = document.querySelector('.btn-group-subcategory');
+function sortSubcategories(selectedLink) { 
+  let currentElement = selectedLink.closest('.form-group');   
+  let slaveElement = currentElement.nextElementSibling;  
+  let categoryButton = currentElement.querySelector('.btn-group-category');  
+  let subCategoryButton = slaveElement.querySelector('.btn-group-subcategory');  
   if (categoryButton.children[0].textContent !== 'Категория') {
     let subCategoryLinks = (subCategoryButton.children[1].querySelectorAll('button'));
     for (subCategoryLinksIndex = 0; subCategoryLinksIndex < subCategoryLinks.length; subCategoryLinksIndex++) {

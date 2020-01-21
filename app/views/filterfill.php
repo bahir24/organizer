@@ -58,7 +58,7 @@
               <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-subcategory">
                   <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="sortSubcategories()">
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="sortSubcategories(this.closest('.form-group').previousElementSibling.querySelector('.dropdown-menu').children[0])">
                     <?php if ($this->arrFilter->subcategoryId) {
                             foreach ($this->arrSubcategories as $subcategory) {
                               if ($subcategory->id == $this->arrFilter->subcategoryId) {
@@ -98,7 +98,7 @@
         </div>
         <div class="row">
           <div class="col-4">
-            <button type="reset" class="btn btn-secondary btn-lg btn-block">Сбросить фильры</button>
+            <button type="reset" onclick="location.href = ''" class="btn btn-secondary btn-lg btn-block">Сбросить фильры</button>
           </div>
           <div class="col-4">
             <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal"
