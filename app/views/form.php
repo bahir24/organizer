@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form class="w-100" action="main/addExpense" method="POST" id="formAddExpense">
+          <form class="w-100" action="main" method="POST" id="formAddExpense">
               <div class="form-group">
                 <div class="input-group mb-2">
                   <div class="btn-group dropright w-100 btn-group-category">
@@ -21,7 +21,7 @@
                       }
                      ?>
                     </div>
-                    <input type='hidden' name="categoryId" value="">
+                    <input type='hidden' name="categoryIdAdd" value="">
                   </div>
                 </div>
               </div>
@@ -40,14 +40,14 @@
                       }
                     ?>                                        
                     </div>
-                    <input type='hidden' name="subcategoryId" value="">
+                    <input type='hidden' name="subcategoryIdAdd" value="">
                   </div>
                 </div>
               </div>
               <div class="input-group mb-2">
                 <label class="streched">
                   <h6 class="mb-1">Дата</h6>
-                  <input type="date" name="purchaseDate" class="form-control expense-day" value="<?php echo date("Y-m-d") ?>">
+                  <input type="date" name="purchaseDateAdd" class="form-control expense-day" value="<?php echo date("Y-m-d") ?>">
                 </label>
               </div>
               <div class="input-group mb-2">
@@ -66,7 +66,7 @@
               <div class="input-group">
                 <label class="streched">
                   <h6 class="mb-1">Примечание</h6>
-                  <textarea name="description" class="form-control h-100"></textarea>
+                  <textarea name="descriptionAdd" class="form-control h-100"></textarea>
                 </label>
               </div>
             </div>

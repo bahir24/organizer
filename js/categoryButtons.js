@@ -1,4 +1,4 @@
-
+//TODO convert to var categoryButton
 
 function changeHead(selectedLink) {
   let currentElement = selectedLink.closest('.form-group');
@@ -23,7 +23,7 @@ function changeHead(selectedLink) {
 }
 
 function changeHeadSub(selectedSublink) {
-  
+  let subCategoryButton = selectedSublink.closest('.btn-group-subcategory');
   subCategoryButton.children[0].textContent = selectedSublink.textContent;
   subCategoryButton.children[2].value = selectedSublink.dataset.id;
 }

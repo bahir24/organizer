@@ -1,6 +1,7 @@
 <?php
 class Route {
   static function start() {
+				
     $ctrlName = 'main';
 		$actName = 'index';
 		$modName = 'expenses';
@@ -27,10 +28,11 @@ class Route {
 			Route::ErrorPage404();
 		}
 		
+
 		$ctrl = new $ctrlName;
 		$act = $actName;
 		if(method_exists($ctrl, $act)) {
-			$ctrl->$act();
+			$ctrl->$act($_POST);
 		} else {
 			Route::ErrorPage404();
     }	

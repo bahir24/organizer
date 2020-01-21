@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row filter-input mb-2">
       <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
-      <form class="filter" action="main/filter" method="POST">
+      <form class="filter" action="" method="POST" id="filterQuery">
         <div class="row">
           <div class="col-2">
             <h6>По дате создания</h6>
@@ -106,7 +106,7 @@
               data-target="#addExpense">Добавить расход</button>
           </div>
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
+            <button type="submit" form="filterQuery" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
           </div>
         </div>
         <?php

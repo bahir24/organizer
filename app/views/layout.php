@@ -13,30 +13,17 @@
 <body>
   <header class="header">
     <div class="container">
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Добавить расход</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="report">Отчет</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="expenses">Все раходы</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="categories">Настройка</a>
-        </li>
-      </ul>
+      <?php
+      include "app/views/menu.php";
+      ?>
     </div>
   </header>
-
   <?php
   include "app/views/$sectionFeatures.php";
   ?>
-
   <script src="/js/categoryButtons.js"></script>
-  <!-- <script src="/js/categoryButtonsModal.js"></script> -->
   <script src="/js/jquery.slim.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

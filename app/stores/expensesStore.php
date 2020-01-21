@@ -12,8 +12,7 @@ class ExpensesStore extends StoreBase {
 		$columns = $this->objectKeysToString($expense, ['id']);
 		$placeholders = $this->objectKeysToPlaceholdersString($expense, ['id']);
 		$expense->purchaseDate = strtotime($expense->purchaseDate);
-
-		$expense->updatedDate = time();
+		$expense->updatedDate = strtotime(date('d.m.Y'));
 		$values = $this->objectToValues($expense, ['id']);
 		$sql = "INSERT INTO $this->table($columns) VALUES($placeholders)";
 		$query = $this->pdo->prepare($sql);
