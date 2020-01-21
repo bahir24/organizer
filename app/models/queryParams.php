@@ -17,13 +17,14 @@
     public $endQuantity;
     public $startSum;
 		public $endtSum;
-		public $sql = 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ';
+		public $sql;
     
-    public function __construct($queryParams) {			
+    public function __construct($queryParams) {
 			$this->order = 'ASC';
 			$this->orderField = 'id';
 			$this->pageNumber = 0;
 			$this->pageSize = 20;
+			$this->sql = 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ';
 
 			foreach($queryParams as $queryKey => $queryParam) {
 				if(strpos($queryKey, 'Date')) {

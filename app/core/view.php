@@ -9,10 +9,10 @@
 
     public function pageRender ()
       {
-        echo "<pre>";
+        // echo "<pre>";
         // print_r($this->arrCategories->id);
         // echo $this->arrCategories[1];
-        echo "</pre>";
+        // echo "</pre>";
 
       include 'app/views/'.$this->pageLayout.'.php';
     }
