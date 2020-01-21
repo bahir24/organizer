@@ -21,7 +21,7 @@
                       }
                      ?>
                     </div>
-                    <input type='hidden' name="categoryIdAdd" value="">
+                    <input type='hidden' form="formAddExpense" name="categoryId" value="">
                   </div>
                 </div>
               </div>
@@ -40,21 +40,21 @@
                       }
                     ?>                                        
                     </div>
-                    <input type='hidden' name="subcategoryIdAdd" value="">
+                    <input type='hidden' form="formAddExpense" name="subcategoryId" value="">
                   </div>
                 </div>
               </div>
               <div class="input-group mb-2">
                 <label class="streched">
                   <h6 class="mb-1">Дата</h6>
-                  <input type="date" name="purchaseDateAdd" class="form-control expense-day" value="<?php echo date("Y-m-d") ?>">
+                  <input type="date" form="formAddExpense" name="purchaseDate" class="form-control expense-day" value="<?php echo date("Y-m-d") ?>">
                 </label>
               </div>
               <div class="input-group mb-2">
                 <label class="streched">
                   <h6 class="mb-1">Стоимость</h6>
                   <div class="d-flex">
-                    <input type="text" name="price" class="form-control input-calc">
+                    <input type="text" form="formAddExpense" name="price" class="form-control input-calc">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary btn-calc" type="button">
                         <img src="/img/calc.svg" class="icon" alt="calc">
@@ -66,7 +66,7 @@
               <div class="input-group">
                 <label class="streched">
                   <h6 class="mb-1">Примечание</h6>
-                  <textarea name="descriptionAdd" class="form-control h-100"></textarea>
+                  <textarea name="description" form="formAddExpense" class="form-control h-100"></textarea>
                 </label>
               </div>
             </div>

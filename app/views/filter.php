@@ -4,27 +4,27 @@
       <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
       <form class="filter" action="" method="POST" id="filterQuery">
         <div class="row">
-          <div class="col-2">
+          <div class="col-3">
             <h6>По дате создания</h6>
             <div class="form-group">
-              <input type="date" name="startPurchaseDate" class="form-control" id="startPurchaseDate"
+              <input type="date" form="filterQuery" name="startPurchaseDate" class="form-control" id="startPurchaseDate"
                 aria-describedby="emailHelp" placeholder="Начало">
             </div>
             <div class="form-group">
-              <input type="date" name="endPurchaseDate" class="form-control" id="endPurchaseDate" placeholder="Конец">
+              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control" id="endPurchaseDate" placeholder="Конец">
             </div>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <h6>По дате изменения</h6>
             <div class="form-group">
-              <input type="date" name="startUpdateDate" class="form-control" id="startUpdateDate"
+              <input type="date" form="filterQuery" name="startUpdatedDate" class="form-control" id="startUpdateDate"
                 aria-describedby="emailHelp" placeholder="Начало">
             </div>
             <div class="form-group">
-              <input type="date" name="endUpdateDate" class="form-control" id="endUpdateDate" placeholder="Конец">
+              <input type="date" form="filterQuery" name="endUpdatedDate" class="form-control" id="endUpdateDate" placeholder="Конец">
             </div>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <h6>По принадлежности</h6>
             <div class="form-group">
               <div class="input-group mb-2">
@@ -41,7 +41,7 @@
                       }
                     ?>
                   </div>
-                  <input type='hidden' name="categoryId" value="">
+                  <input type='hidden' form="filterQuery" name="categoryId" value="">
                 </div>
               </div>
             </div>
@@ -61,39 +61,19 @@
                       }
                     ?>
                   </div>
-                  <input type='hidden' name="subcategoryId" value="">
+                  <input type='hidden' form="filterQuery" name="subcategoryId" value="">
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <h6>По цене</h6>
             <div class="form-group">
-              <input type="text" class="form-control" id="startPrice" aria-describedby="emailHelp" placeholder="От"
+              <input type="text" form="filterQuery" class="form-control" id="startPrice" aria-describedby="emailHelp" placeholder="От"
                 name="startPrice">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="endPrice" placeholder="До" name="endPrice">
-            </div>
-          </div>
-          <div class="col-2">
-            <h6>По количеству</h6>
-            <div class="form-group">
-              <input type="text" class="form-control" id="startQuantity" aria-describedby="emailHelp" placeholder="От"
-                name="startQuantity">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="endQuantity" placeholder="До" name="endQuantity">
-            </div>
-          </div>
-          <div class="col-2">
-            <h6>По стоимости</h6>
-            <div class="form-group">
-              <input type="text" class="form-control" id="startSum" aria-describedby="emailHelp" placeholder="От"
-                name="startSum">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="endSum" placeholder="До" name="endSum">
+              <input type="text" form="filterQuery" class="form-control" id="endPrice" placeholder="До" name="endPrice">
             </div>
           </div>
         </div>

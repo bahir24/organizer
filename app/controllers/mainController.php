@@ -4,30 +4,31 @@
 
 class mainController extends Controller
 {
-    public $dataTable = "table";
     public $sectionSpecify = "filter";
   
   
     public function indexAction($arrFilterQuery)
     {
-      // print_r($arrFilterQuery);
+      
+      $this->viewBuild->sectionFeatures = $this->sectionSpecify;
+
       if(empty($arrFilterQuery)) {
-        $arrExpenses = $this->store->getAll();
-
-        $this->viewBuild->pageRender($this->pageTemplate, $this->sectionSpecify, $this->dataTable, $arrExpenses, $this->arrCategories, $this->arrSubcategories);
+        $this->arrExpense = $this->store->getAll();
+        // echo "<pre>";
+        // print_r(get_object_vars($this));
+        // echo "</pre>";
+        $this->viewBuild->pageRender(        
+        $this->sectionSpecify,         
+        $this->arrExpense, 
+        $this->arrCategories, 
+        $this->arrSubcategories);
       } else {
-        $queryparams = new QueryParams($arrFilterQuery);
-        $arrExpenses = $this->store->getByFilter($queryparams->sql);
-        $this->viewBuild->pageRender($this->pageTemplate, $this->sectionSpecify, $this->dataTable, $arrExpenses, $this->arrCategories, $this->arrSubcategories);
+        $this->viewBuild->sectionFeatures = $this->sectionSpecify;
+        $this->arrFilter = new QueryParams($arrFilterQuery);        
+        $this->arrExpense = $this->store->getByFilter($this->arrFilter->sql);
+        $this->viewBuild->pageRender(get_object_vars($this->viewBuild));
       }
-    }
-
-    // public function filterAction()
-    // {
-    //     $queryparams = new QueryParams($_POST);
-    //     $arrExpenses = $this->store->getByFilter($queryparams->sql);    
-    //     $this->viewBuild->pageRender($this->pageTemplate, $this->sectionSpecify, $this->dataTable, $arrExpenses, $this->arrCategories, $this->arrSubcategories);
-    // }
+    }    
 
     public function editAction()
     {

@@ -33,17 +33,17 @@
 			}
 
 			$this->addFilterByVar($this->startPurchaseDate, $this->endPurchaseDate, 'purchaseDate');			
-			$this->addFilterByVar($this->startUpdateDate, $this->endUpdateDate, 'updatedDate');
+			$this->addFilterByVar($this->startUpdatedDate, $this->endUpdatedDate, 'updatedDate');
 			$this->addFilterByVar($this->categoryId, null, 'categoryId');
 			$this->addFilterByVar($this->subcategoryId, null, 'subcategoryId');
-			$this->addFilterByVar($this->startPrice, $this->endPrice, 'price');			
+			$this->addFilterByVar($this->startPrice, $this->endPrice, 'price');		
 		}
 
 		public function addFilterByVar($startVar, $endVar, $baseFieldName) {
 			if ($this->sql == 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ') {
 				$queryBefore = 'WHERE ';
 			} else {
-				$queryBefore = 'AND ';
+				$queryBefore = ' AND ';
 			}
 			if (($startVar) && ($endVar)) {
 				$this->sql .= $queryBefore.$baseFieldName." BETWEEN ".$startVar." AND ".$endVar." ";

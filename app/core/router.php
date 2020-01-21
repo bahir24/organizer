@@ -30,6 +30,8 @@ class Route {
 		
 
 		$ctrl = new $ctrlName;
+		
+
 		$act = $actName;
 		if(method_exists($ctrl, $act)) {
 			$ctrl->$act($_POST);

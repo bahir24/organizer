@@ -1,6 +1,15 @@
 <?php
   class View {
-    public function pageRender($pageLayout, $sectionFeatures, $varContent, $arrExpenses, $arrCategories, $arrSubcategories) {            
-      include 'app/views/layout.php';
+    public $pageLayout;
+    public $sectionFeatures = 123;
+    public $arrExpense; 
+    public $arrFilter; 
+    public $arrCategories; 
+    public $arrSubcategories;  
+
+    public function pageRender ()
+      {
+        echo $this->sectionFeatures;
+      include 'app/views/'.$this->pageLayout.'.php';
     }
   }

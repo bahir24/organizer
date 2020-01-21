@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <?php
-    foreach($arrExpenses as $row) {
+    foreach($this->arrExpenses as $row) {
       $row->purchaseDate = $row::dateFormat($row->purchaseDate);
       $row->updatedDate = $row::dateFormat($row->updatedDate);
       echo "<tr>
