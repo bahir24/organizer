@@ -1,11 +1,10 @@
 <?php
 class Route {
   static function start() {
-				
     $ctrlName = 'main';
 		$actName = 'index';
 		$modName = 'expenses';
-    $arrRoutes = explode('/', $_SERVER['REQUEST_URI']);
+		$arrRoutes = explode('/', $_SERVER['REQUEST_URI']);
     if (!empty($arrRoutes[1])) {	
 			$ctrlName = $arrRoutes[1];
     }    
