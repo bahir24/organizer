@@ -1,6 +1,9 @@
 <?php
 class Route {
+	
   static function start() {
+
+
     $ctrlName = 'main';
 		$actName = 'index';
 		$modName = 'expenses';
@@ -10,7 +13,8 @@ class Route {
     }    
     if (!empty($arrRoutes[2])) {
 			$actName = $arrRoutes[2];
-    }
+		}
+		
     $modName = $modName.'Store';
 		$ctrlName = $ctrlName.'Controller';
     $actName = $actName.'Action';
@@ -40,6 +44,6 @@ class Route {
     header('HTTP/1.1 404 Not Found');
 		header("Status: 404 Not Found");
 		header('Location:'.$host.'404');
-		echo "ERROR";
+		require_once '404.html';
   }    
 }
