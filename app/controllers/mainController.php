@@ -4,18 +4,12 @@ class mainController extends Controller
 {
   public $sectionSpecify = "filter";
 
-  function __construct($arrFilterQuery) {      
-    parent::__construct();
-      if(array_key_exists('startPurchaseDate', $arrFilterQuery))  {
-        $this->arrFilter = new QueryParams($arrFilterQuery);
-      }
-    }
-  
-  public function indexAction()
+  public function indexAction($arrFilterQuery)
   {            
-    if(empty($this->arrFilter->sql)) {
+    if(empty($arrFilterQuery)) {
     $this->arrExpense = $this->store->getAll();
-    } else {      
+    } else {   
+    $this->arrFilter = new QueryParams($arrFilterQuery);   
     $this->viewBuild->arrFilter = $this->arrFilter;
     $this->arrExpense = $this->store->getByFilter($this->arrFilter->sql);
     $this->sectionSpecify = 'filterfill';
@@ -25,8 +19,7 @@ class mainController extends Controller
     $this->viewBuild->pageRender();
   }        
 
-  public function deleteAction()
-  {
+  public function deleteAction() {
     $exEntity = new ExpenseEntity;
     $exEntity->postStrToObject($_POST);
     $this->store->delete($exEntity->id);    
@@ -44,8 +37,6 @@ class mainController extends Controller
     $exEntity = new ExpenseEntity;
     $exEntity->postStrToObject($_POST);
     $this->store->update($exEntity);
-
     header("Location: http://organizer.com/");
   }
-
 }

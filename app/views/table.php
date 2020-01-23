@@ -27,7 +27,7 @@
           <button type='button' class='btn btn-outline-success btn-sm py-0 px-1'  data-toggle='modal' data-target='#updateExpense' data-id='$row->id' onclick='prepareUpdate(this)'>
           <img src='/img/edit.svg' class='icon' alt='edit'>
           </button>";
-          include "app/views/$delButtonType.php";
+          include "app/views/delbtn.php";
           echo "</td>
         </tr>";
       }

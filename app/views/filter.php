@@ -96,7 +96,6 @@
     </div>
     <div class="row">
       <?php
-      $delButtonType = 'delbtn';
       include 'app/views/table.php';
     ?>
     </div>

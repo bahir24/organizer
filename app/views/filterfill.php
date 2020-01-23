@@ -141,8 +141,6 @@
     </div>
     <div class="row">
       <?php
-      $delButtonType = 'delbtnfilter';
-
       include 'app/views/table.php';
     ?>
     </div>
