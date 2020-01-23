@@ -18,6 +18,6 @@
         $this->viewBuild->pageLayout = $this->pageTemplate;
         $this->viewBuild->arrCategories = $this->arrCategories;
         $this->viewBuild->arrSubcategories = $this->arrSubcategories;
-        $this->store = new ExpensesStore($this->db);      
+        $this->store = new ExpensesStore($this->db);
       }
   }

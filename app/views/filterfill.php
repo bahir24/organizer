@@ -7,21 +7,35 @@
           <div class="col-3">
             <h6>По дате создания</h6>
             <div class="form-group">
-              <input type="date" form="filterQuery" name="startPurchaseDate" class="form-control" id="startPurchaseDate" aria-describedby="emailHelp" placeholder="Начало" 
-              value="<?php if($this->arrFilter->startPurchaseDate) {echo date("Y-m-d", $this->arrFilter->startPurchaseDate);}?>">
+              <input type="date" form="filterQuery" name="startPurchaseDate" class="form-control" id="startPurchaseDate"
+                aria-describedby="emailHelp" placeholder="Начало"
+                value="<?php if ($this->arrFilter->startPurchaseDate) {
+    echo date("Y-m-d", $this->arrFilter->startPurchaseDate);
+}?>">
             </div>
             <div class="form-group">
-              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control" id="endPurchaseDate" placeholder="Конец" value="<?php if($this->arrFilter->endPurchaseDate) {echo date("Y-m-d", $this->arrFilter->endPurchaseDate);}?>">
+              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control" id="endPurchaseDate"
+                placeholder="Конец"
+                value="<?php if ($this->arrFilter->endPurchaseDate) {
+    echo date("Y-m-d", $this->arrFilter->endPurchaseDate);
+}?>">
             </div>
           </div>
           <div class="col-3">
             <h6>По дате изменения</h6>
             <div class="form-group">
               <input type="date" form="filterQuery" name="startUpdatedDate" class="form-control" id="startUpdateDate"
-                aria-describedby="emailHelp" placeholder="Начало" value="<?php if($this->arrFilter->startUpdatedDate) {echo date("Y-m-d", $this->arrFilter->startUpdatedDate);}?>">
+                aria-describedby="emailHelp" placeholder="Начало"
+                value="<?php if ($this->arrFilter->startUpdatedDate) {
+    echo date("Y-m-d", $this->arrFilter->startUpdatedDate);
+}?>">
             </div>
             <div class="form-group">
-              <input type="date" form="filterQuery" name="endUpdatedDate" class="form-control" id="endUpdateDate" placeholder="Конец" value="<?php if($this->arrFilter->endUpdatedDate) {echo date("Y-m-d", $this->arrFilter->endUpdatedDate);}?>">
+              <input type="date" form="filterQuery" name="endUpdatedDate" class="form-control" id="endUpdateDate"
+                placeholder="Конец"
+                value="<?php if ($this->arrFilter->endUpdatedDate) {
+    echo date("Y-m-d", $this->arrFilter->endUpdatedDate);
+}?>">
             </div>
           </div>
           <div class="col-3">
@@ -32,14 +46,14 @@
                   <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php if ($this->arrFilter->categoryId) {
-                      foreach($this->arrCategories as $category) {
-                        if($category->id == $this->arrFilter->categoryId) {
-                          echo $category->name;
-                        }
-                      }
-                    } else {
-                      echo "Категория";
-                    }
+    foreach ($this->arrCategories as $category) {
+        if ($category->id == $this->arrFilter->categoryId) {
+            echo $category->name;
+        }
+    }
+} else {
+    echo "Категория";
+}
                     ?>
                   </button>
                   <div class="dropdown-menu">
@@ -50,7 +64,8 @@
                       }
                     ?>
                   </div>
-                  <input type='hidden' form="filterQuery" name="categoryId" value="<?php echo $this->arrFilter->categoryId ?>">
+                  <input type='hidden' form="filterQuery" name="categoryId"
+                    value="<?php echo $this->arrFilter->categoryId ?>">
                 </div>
               </div>
             </div>
@@ -58,16 +73,17 @@
               <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-subcategory">
                   <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="sortSubcategories(this.closest('.form-group').previousElementSibling.querySelector('.dropdown-menu').children[0])">
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    onclick="sortSubcategories(this.closest('.form-group').previousElementSibling.querySelector('.dropdown-menu').children[0])">
                     <?php if ($this->arrFilter->subcategoryId) {
-                            foreach ($this->arrSubcategories as $subcategory) {
-                              if ($subcategory->id == $this->arrFilter->subcategoryId) {
+                        foreach ($this->arrSubcategories as $subcategory) {
+                            if ($subcategory->id == $this->arrFilter->subcategoryId) {
                                 echo $subcategory->name;
-                              }
                             }
-                          } else {
-                            echo "Подкатегория";
-                          }
+                        }
+                    } else {
+                        echo "Подкатегория";
+                    }
                           ?>
 
                   </button>
@@ -80,7 +96,8 @@
                       }
                     ?>
                   </div>
-                  <input type='hidden' form="filterQuery" name="subcategoryId" value="<?php echo $this->arrFilter->subcategoryId;?>">
+                  <input type='hidden' form="filterQuery" name="subcategoryId"
+                    value="<?php echo $this->arrFilter->subcategoryId;?>">
                 </div>
               </div>
             </div>
@@ -88,17 +105,24 @@
           <div class="col-3">
             <h6>По цене</h6>
             <div class="form-group">
-              <input type="text" form="filterQuery" class="form-control" id="startPrice" aria-describedby="emailHelp" placeholder="От"
-                name="startPrice" value="<?php if($this->arrFilter->startPrice) {echo $this->arrFilter->startPrice;}?>">
+              <input type="text" form="filterQuery" class="form-control" id="startPrice" aria-describedby="emailHelp"
+                placeholder="От" name="startPrice"
+                value="<?php if ($this->arrFilter->startPrice) {
+                        echo $this->arrFilter->startPrice;
+                    }?>">
             </div>
             <div class="form-group">
-              <input type="text" form="filterQuery" class="form-control" id="endPrice" placeholder="До" name="endPrice"  value="<?php if($this->arrFilter->endPrice) {echo $this->arrFilter->endPrice;}?>">
+              <input type="text" form="filterQuery" class="form-control" id="endPrice" placeholder="До" name="endPrice"
+                value="<?php if ($this->arrFilter->endPrice) {
+                        echo $this->arrFilter->endPrice;
+                    }?>">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-4">
-            <button type="reset" onclick="location.href = ''" class="btn btn-secondary btn-lg btn-block">Сбросить фильры</button>
+            <button type="reset" onclick="location.href = ''" class="btn btn-secondary btn-lg btn-block">Сбросить
+              фильры</button>
           </div>
           <div class="col-4">
             <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal"
@@ -107,11 +131,12 @@
           <div class="col-4">
             <button type="submit" form="filterQuery" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
           </div>
-        </div>
-        <?php
-          include 'app/views/form.php';
-        ?>
+        </div>       
       </form>
+      <?php
+        include 'app/views/form.php';
+        include 'app/views/formupdate.php';
+      ?>
     </div>
     <div class="row">
       <?php

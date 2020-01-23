@@ -89,11 +89,12 @@
             <button type="submit" form="filterQuery" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
           </div>
         </div>
-        <?php
-          include 'app/views/form.php';
-          include 'app/views/formupdate.php';
-        ?>
+        
       </form>
+      <?php
+        include 'app/views/form.php';
+        include 'app/views/formupdate.php';
+      ?>
     </div>
     <div class="row">
       <?php
