@@ -72,13 +72,8 @@ section {
 
 #chartdiv {
   height: 30vh;
-  /* padding-top: 10%; */
   width: 100%;
 }
-
-/* .filter-input { */
-  /* min-height: 20vh; */
-/* } */
 
 .filter {
   width: 100%;

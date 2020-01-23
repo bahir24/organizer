@@ -4,7 +4,7 @@ class StoreBase {
 	protected $pdo;
 	protected $table;
 	protected $entity;
-	public $db = 'db/test.db';
+	public $db = 'db/organizer.db';
 
 	public function __construct($db, $table) {
 		$this->table = $table;
