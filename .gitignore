@@ -2,6 +2,7 @@ node_modules
 .DS_Store
 .vscode
 .idea
+<<<<<<< HEAD
 dist
 *.log
 <<<<<<< HEAD
@@ -15,3 +16,6 @@ share
 =======
 article.txt
 >>>>>>> e7f84c5... gitignore add
+=======
+schema_images
+>>>>>>> filter
