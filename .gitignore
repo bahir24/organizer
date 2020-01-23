@@ -4,4 +4,14 @@ node_modules
 .idea
 dist
 *.log
+<<<<<<< HEAD
 article.txt
+schema_images
+bin
+include
+lib/pkgconfig
+log
+share
+=======
+article.txt
+>>>>>>> e7f84c5... gitignore add
