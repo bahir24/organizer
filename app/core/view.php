@@ -7,9 +7,7 @@
     public $arrCategories; 
     public $arrSubcategories;  
 
-    public function pageRender ()
-      {
-
+    public function pageRender () {
       include 'app/views/'.$this->pageLayout.'.php';
     }
   }

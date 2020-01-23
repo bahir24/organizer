@@ -1,7 +1,6 @@
 //TODO convert to var categoryButton
 
-function changeHead(selectedLink) {
-  
+function changeHead(selectedLink) {  
   let currentElement = selectedLink.closest('.form-group');
   let slaveElement = currentElement.nextElementSibling;
   let categoryButton = currentElement.querySelector('.btn-group-category');

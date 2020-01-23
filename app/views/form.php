@@ -20,7 +20,7 @@
                   <?php
                     foreach ($this->arrCategories as $categoryName) {
                         echo "<button type='button' class='dropdown-item' data-id='$categoryName->id' onclick='changeHead(this)'>$categoryName->name</button>
-                            <div class='dropdown-divider'></div>";
+                        <div class='dropdown-divider'></div>";
                     }
                   ?>
                 </div>
@@ -40,7 +40,7 @@
                   
                     foreach ($this->arrSubcategories as $subcategoryName) {
                         echo "<button type='button' class='dropdown-item' data-id='$subcategoryName->id' data-category-id='$subcategoryName->categoryId' onclick='changeHeadSub(this)'>$subcategoryName->name</button>
-                            <div class='dropdown-divider'></div>";
+                        <div class='dropdown-divider'></div>";
                     }
                   ?>
                 </div>

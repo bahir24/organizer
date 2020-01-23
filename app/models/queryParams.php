@@ -32,8 +32,7 @@
 				}
 				$this->$queryKey = $queryParam;
 			}
-
-			$this->addFilterByVar($this->startPurchaseDate, $this->endPurchaseDate, 'purchaseDate');			
+			$this->addFilterByVar($this->startPurchaseDate, $this->endPurchaseDate, 'purchaseDate');
 			$this->addFilterByVar($this->startUpdatedDate, $this->endUpdatedDate, 'updatedDate');
 			$this->addFilterByVar($this->categoryId, null, 'categoryId');
 			$this->addFilterByVar($this->subcategoryId, null, 'subcategoryId');
