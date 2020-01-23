@@ -19,5 +19,6 @@
         $this->viewBuild->arrCategories = $this->arrCategories;
         $this->viewBuild->arrSubcategories = $this->arrSubcategories;
         $this->store = new ExpensesStore($this->db);
+
       }
   }

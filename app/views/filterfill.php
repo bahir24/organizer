@@ -131,7 +131,8 @@
           <div class="col-4">
             <button type="submit" form="filterQuery" class="btn btn-primary btn-lg btn-block">Фильтровать</button>
           </div>
-        </div>       
+        </div>
+        <input type='hidden' name='id' class='delButtonId'>
       </form>
       <?php
         include 'app/views/form.php';
@@ -140,6 +141,8 @@
     </div>
     <div class="row">
       <?php
+      $delButtonType = 'delbtnfilter';
+
       include 'app/views/table.php';
     ?>
     </div>

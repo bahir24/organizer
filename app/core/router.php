@@ -30,7 +30,7 @@ class Route
             Route::ErrorPage404();
         }
         if (class_exists($ctrlName)) {
-            $ctrl = new $ctrlName;
+            $ctrl = new $ctrlName($_POST);
             $act = $actName;
             if (method_exists($ctrl, $act)) {
                 $ctrl->$act($_POST);
