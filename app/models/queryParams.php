@@ -20,7 +20,7 @@
 		public $sql;
     
     public function __construct($queryParams) {
-			$this->order = 'ASC';
+			$this->order = 'DESC';
 			$this->orderField = 'id';
 			$this->pageNumber = 0;
 			$this->pageSize = 20;

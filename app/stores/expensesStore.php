@@ -30,8 +30,8 @@ class ExpensesStore extends StoreBase {
 	}
 
 	public function getAll() {
-		$sql = "SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId	LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId";
-		$query = $this->pdo->query($sql);		
+		$sql = "SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId	LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ORDER BY id DESC";
+		$query = $this->pdo->query($sql);
 		if(class_exists('Expense')) {            		
 		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);		
 		return $query->fetchAll();
