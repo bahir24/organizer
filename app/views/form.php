@@ -58,7 +58,7 @@
               <label class="streched">
                 <h6 class="mb-1">Стоимость</h6>
                 <div class="d-flex">
-                  <input type="text" form="formAddExpense" name="price" class="form-control input-calc">
+                  <input type="number" form="formAddExpense" name="price" class="form-control input-calc">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary btn-calc" type="button">
                       <img src="/img/calc.svg" class="icon" alt="calc">

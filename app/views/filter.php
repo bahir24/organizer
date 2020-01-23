@@ -1,4 +1,4 @@
-<section class="filter">
+<section class="all-expense">
   <div class="container">
     <div class="row filter-input mb-2">
       <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
@@ -7,21 +7,21 @@
           <div class="col-3">
             <h6>По дате создания</h6>
             <div class="form-group">
-              <input type="date" form="filterQuery" name="startPurchaseDate" class="form-control" id="startPurchaseDate"
-                aria-describedby="emailHelp" placeholder="Начало">
+              <input type="date" form="filterQuery" placeholder="Дата" name="startPurchaseDate" class="form-control form-control-sm" id="startPurchaseDate"
+                aria-describedby="emailHelp">
             </div>
             <div class="form-group">
-              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control" id="endPurchaseDate" placeholder="Конец">
+              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control form-control-sm" id="endPurchaseDate" min="2020-01-12">
             </div>
           </div>
           <div class="col-3">
             <h6>По дате изменения</h6>
             <div class="form-group">
-              <input type="date" form="filterQuery" name="startUpdatedDate" class="form-control" id="startUpdateDate"
-                aria-describedby="emailHelp" placeholder="Начало">
+              <input type="date" form="filterQuery" name="startUpdatedDate" class="form-control form-control-sm" id="startUpdateDate"
+                aria-describedby="emailHelp">
             </div>
             <div class="form-group">
-              <input type="date" form="filterQuery" name="endUpdatedDate" class="form-control" id="endUpdateDate" placeholder="Конец">
+              <input type="date" form="filterQuery" name="endUpdatedDate" class="form-control form-control-sm" id="endUpdateDate">
             </div>
           </div>
           <div class="col-3">
@@ -29,7 +29,7 @@
             <div class="form-group">
               <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-category">
-                  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
+                  <button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle btn-category"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Категория
                   </button>
@@ -48,7 +48,7 @@
             <div class="form-group">
               <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-subcategory">
-                  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-category"
+                  <button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle btn-category"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled>
                     Подкатегория
                   </button>
@@ -68,11 +68,11 @@
           <div class="col-3">
             <h6>По цене</h6>
             <div class="form-group">
-              <input type="text" form="filterQuery" class="form-control" id="startPrice" aria-describedby="emailHelp" placeholder="От"
+              <input type="text" form="filterQuery" class="form-control form-control-sm" id="startPrice" aria-describedby="emailHelp" placeholder="От"
                 name="startPrice">
             </div>
             <div class="form-group">
-              <input type="text" form="filterQuery" class="form-control" id="endPrice" placeholder="До" name="endPrice">
+              <input type="text" form="filterQuery" class="form-control form-control-sm" id="endPrice" placeholder="До" name="endPrice">
             </div>
           </div>
         </div>
@@ -101,3 +101,6 @@
     </div>
   </div>
 </section>
+<footer class="footer">
+  
+</footer>

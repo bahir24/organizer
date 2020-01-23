@@ -3,7 +3,8 @@ button {
 }
 
 .header {
-  padding-top: 20px;
+  padding-top: 18px;
+  height: 6vh;
 }
 
 section {
@@ -77,13 +78,28 @@ section {
 
 .filter {
   width: 100%;
+  
+}
+
+.all-expense {
+height: 88vh;
 }
 
 td,
 th {
-  max-width: 120px;
+  width: fit-content;
   white-space: nowrap;
   text-overflow: ellipsis;
   position: relative;
   overflow: hidden;
+}
+
+td:last-child,
+th:last-child {
+  text-align: right;
+  width: ;
+}
+
+.footer {
+  height: 6vh;
 }

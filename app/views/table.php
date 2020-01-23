@@ -1,8 +1,7 @@
-<table class="table table-striped">
+<table class="table table-sm table-striped">
   <thead>
     <tr>
       <th scope="col">Дата</th>
-      <th scope="col">Изменено</th>
       <th scope="col">Категория</th>
       <th scope="col">Подкатегория</th>
       <th scope="col">Цена</th>
@@ -17,8 +16,7 @@
       $row->updatedDate = $row->dateFormat($row->updatedDate);
       echo 
         "<tr class='expense-row-$row->id'>
-          <th scope='row'>$row->purchaseDate</th>
-          <td>$row->updatedDate</td>
+          <th scope='row'>$row->purchaseDate</th>          
           <td data-category-id='$row->categoryId'>$row->categoryName</td>
           <td data-subcategory-id='$row->subcategoryId'>$row->subcategoryName</td>
           <td>$row->price</td>
