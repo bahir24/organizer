@@ -172,3 +172,18 @@ width: 100%;
 .make-button-wrap {
   text-align: center;
 }
+
+.total-period {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-field-head {
+  display: flex;
+  flex: 0.5;
+}
+
+.footer-field-data {
+  display: flex;
+  flex: 1;
+}

@@ -129,6 +129,3 @@
     </div>
   </div>
 </section>
-<footer class="footer">
-  
-</footer>
