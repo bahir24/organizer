@@ -13,8 +13,8 @@
   <tbody>
     <?php
     foreach($this->arrExpense as $row) {
-      $row->purchaseDate = $row::dateFormat($row->purchaseDate);
-      $row->updatedDate = $row::dateFormat($row->updatedDate);
+      $row->purchaseDate = $row->dateFormat($row->purchaseDate);
+      $row->updatedDate = $row->dateFormat($row->updatedDate);
       echo "<tr class='expense-row-$row->id'>
               <th scope='row'>$row->purchaseDate</th>
               <td>$row->updatedDate</td>

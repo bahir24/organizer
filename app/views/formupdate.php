@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form class="w-100" action="main" method="POST" id="formUpdateExpense">
+          <form class="w-100" action="main/addExpense" method="POST" id="formUpdateExpense">
               <div class="form-group">
                 <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-category">
