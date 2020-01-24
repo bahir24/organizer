@@ -83,7 +83,7 @@ button {
 }
 
 .filter-input {
-  height: 19vh;
+  max-height: 19vh;
 }
 
 .table-wrapper {
@@ -147,8 +147,8 @@ tr {
   height: 6vh;
 }
 
-table {
-  height: 69vh;
+.table-expenses {
+  max-height: 69vh;
   display: block;
   margin-bottom: 0 !important;
 }
@@ -181,9 +181,78 @@ width: 100%;
 .footer-field-head {
   display: flex;
   flex: 0.5;
+  align-items: flex-start;
+
 }
 
 .footer-field-data {
   display: flex;
   flex: 1;
+  align-items: flex-start;
 }
+
+
+.input-sort {
+ opacity: 0; 
+}
+
+.date-sort,
+.category-sort,
+.subcategory-sort,
+.price-sort {
+padding: 0 !important;
+}
+
+.sort-query-btn {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  z-index: 10;
+  width: 100%;
+  height: 34px;
+  padding: 0;
+}
+.sort-btn-head {
+  display: inline-flex;
+  text-align: left;
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin: 0;
+  z-index: 1;
+}
+
+.sort-btn-head:focus {
+  outline: unset !important;
+  -webkit-focus-ring-color: none;
+  border: none;
+  box-shadow: none;
+}
+
+.img-sort-desc,
+.img-sort-asc {
+  transform: rotate(180deg);
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+  position: absolute;
+  margin-right: 2px;
+}
+
+.img-sort-desc,
+.img-sort-asc {
+ opacity: 1;
+}
+
+.sort-img-hidden {
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+

@@ -24,6 +24,7 @@
 
   ?>
   <script src="/js/categoryButtons.js"></script>
+  <script src="/js/sortButton.js"></script>
   <script src="/js/filterNoReset.js"></script>
 
   <script src="/js/prepareUpdate.js"></script>

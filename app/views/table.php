@@ -1,10 +1,42 @@
 <table class="table table-sm table-striped table-expenses">
   <thead class="table-expenses-head">
     <tr>
-      <th scope="col">Дата</th>
-      <th scope="col">Категория</th>
-      <th scope="col">Подкатегория</th>
-      <th scope="col">Цена</th>
+      <th scope="col" class="date-sort">
+        <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+          <h6 class="sort-btn-head">Дата</h6>          
+          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
+          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+        </button>
+      
+      </th>
+      <th scope="col"  class="category-sort">
+         <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+          <h6 class="sort-btn-head">Категория</h6>          
+          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
+          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+        </button>
+      
+    </th>
+      <th scope="col"  class="subcategory-sort">
+        <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+          <h6 class="sort-btn-head">Подкатегория</h6>          
+          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
+          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+        </button> 
+      
+    </th>
+      <th scope="col" class="price-sort">
+        <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+          <h6 class="sort-btn-head">Цена</h6>          
+          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
+          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+        </button> 
+      
+    </th>
       <th scope="col">Примечание</th>
       <th scope="col">Действия</th>
     </tr>
