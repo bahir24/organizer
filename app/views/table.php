@@ -4,7 +4,7 @@
       <th scope="col" class="date-sort">
         <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
           <h6 class="sort-btn-head">Дата</h6>          
-          <input class="input-sort" id="ascDate" form="filterQuery" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" form="filterQuery" type="radio" name="sortByDate" value="DESC">          
+          <input class="input-sort" id="ascDate" form="filterQuery" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" form="filterQuery" type="radio" name="sortByPurchaseDate" value="DESC">          
           <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
           <img src="/img/sort_down.svg" class="img-sort-desc">
         </button>
@@ -13,7 +13,7 @@
       <th scope="col"  class="category-sort">
          <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
           <h6 class="sort-btn-head">Категория</h6>          
-          <input class="input-sort" id="ascCategory" form="filterQuery" type="radio" name="sortByCategory" value="ASC">  <input class="input-sort" id="descCategory" form="filterQuery" type="radio" name="sortByCategory" value="DESC">          
+          <input class="input-sort" id="ascCategory" form="filterQuery" type="radio" name="sortByCategoryId" value="ASC">  <input class="input-sort" id="descCategory" form="filterQuery" type="radio" name="sortByCategoryId" value="DESC">          
           <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
           <img src="/img/sort_down.svg" class="img-sort-desc">
         </button>
@@ -22,7 +22,7 @@
       <th scope="col"  class="subcategory-sort">
         <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
           <h6 class="sort-btn-head">Подкатегория</h6>          
-          <input class="input-sort" id="ascSubcategory" form="filterQuery" type="radio" name="sortBySubcategory" value="ASC">  <input class="input-sort" id="descSubcategory" form="filterQuery" type="radio" name="sortBySubcategory" value="DESC">          
+          <input class="input-sort" id="ascSubcategory" form="filterQuery" type="radio" name="sortBySubcategoryId" value="ASC">  <input class="input-sort" id="descSubcategory" form="filterQuery" type="radio" name="sortBySubcategoryId" value="DESC">          
           <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
           <img src="/img/sort_down.svg" class="img-sort-desc">
         </button> 

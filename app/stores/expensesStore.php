@@ -22,7 +22,6 @@ class ExpensesStore extends StoreBase {
 	public function update(ExpenseEntity $expense) {
 		$setPairs = $this->objectKeysToSetPairsString($expense, ['id']);
 		$expense->purchaseDate = strtotime($expense->purchaseDate);
-		$expense->updatedDate = time();
 		$values = $this->objectToValues($expense);
 		$sql = "UPDATE $this->table SET $setPairs WHERE id = :id";
 		$query = $this->pdo->prepare($sql);		
@@ -30,7 +29,7 @@ class ExpensesStore extends StoreBase {
 	}
 
 	public function getAll() {
-		$sql = "SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId	LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ORDER BY id DESC";
+		$sql = "SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId	LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId";
 		$query = $this->pdo->query($sql);
 		if(class_exists('Expense')) {            		
 		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);		

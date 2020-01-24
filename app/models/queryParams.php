@@ -7,21 +7,16 @@
 		
     public $startPurchaseDate;
     public $endPurchaseDate;
-    public $startUpdatedDate;
-    public $endUpdatedDate;
     public $categoryId;
     public $subcategoryId;
     public $startPrice;
     public $endPrice;
-    public $startQuantity;
-    public $endQuantity;
-    public $startSum;
-		public $endtSum;
 		public $sql;
     
     public function __construct($queryParams) {
-			$this->order = 'DESC';
-			$this->orderField = 'id';
+			$this->order = array_values($queryParams)[7];
+
+			$this->orderField = lcfirst(str_replace('sortBy', '', (array_keys($queryParams))[7]));
 			$this->pageNumber = 0;
 			$this->pageSize = 20;
 			$this->sql = 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ';
@@ -33,7 +28,6 @@
 				$this->$queryKey = $queryParam;
 			}
 			$this->addFilterByVar($this->startPurchaseDate, $this->endPurchaseDate, 'purchaseDate');
-			$this->addFilterByVar($this->startUpdatedDate, $this->endUpdatedDate, 'updatedDate');
 			$this->addFilterByVar($this->categoryId, null, 'categoryId');
 			$this->addFilterByVar($this->subcategoryId, null, 'subcategoryId');
 			$this->addFilterByVar($this->startPrice, $this->endPrice, 'price');		
@@ -50,6 +44,10 @@
 			} elseif (($startVar) || ($endVar)) {				
 				$this->sql .= $queryBefore."expenses.".$baseFieldName."=";
 				$this->sql .= $startVar ? $startVar : $endVar;
-				}		
+				} 
+				
+
+				
+
 			}		
 		}

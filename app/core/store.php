@@ -35,14 +35,14 @@ class StoreBase {
 		return (int) $result["count"];
 	}
 
-	public function getPaged(QueryParams $queryParams) {
-		$skip = $queryParams->pageNumber * $queryParams->pageSize;
-		$sql = "SELECT * FROM $this->table ORDER BY 
-		$queryParams->orderField $queryParams->order LIMIT $skip, $queryParams->pageSize";
-		$query = $this->pdo->query($sql);
-		$query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
-		return $query->fetchAll();
-	}
+	// public function getPaged(QueryParams $queryParams) {
+	// 	$skip = $queryParams->pageNumber * $queryParams->pageSize;
+	// 	$sql = "SELECT * FROM $this->table ORDER BY 
+	// 	$queryParams->orderField $queryParams->order LIMIT $skip, $queryParams->pageSize";
+	// 	$query = $this->pdo->query($sql);
+	// 	$query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
+	// 	return $query->fetchAll();
+	// }
 
 	
 

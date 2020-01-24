@@ -108,7 +108,13 @@ echo date("Y-m-d", $this->arrFilter->startPurchaseDate);}?>">
     </div>
     <div class="row table-wrapper">
       <?php
-      include 'app/views/table.php';
+      $sortFilterSave = array();
+      $lastOrder = $this->arrFilter->order;
+      $lastOrderField = $this->arrFilter->orderField;
+      $lastOrderField = str_replace('Id', '', $lastOrderField);
+      $sortFilterSave[$lastOrderField.$lastOrder] = "checked";
+      $sortFilterSave[$lastOrderField.$lastOrder.'img'] = "sort-img-hidden";
+      include 'app/views/tablefilter.php';
     ?>
     </div>
   </div>
