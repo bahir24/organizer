@@ -5,7 +5,9 @@ class mainController extends Controller
   public $sectionSpecify = "filter";
 
   public function indexAction($arrFilterQuery)
-  {            
+  {      
+    
+      
     if(empty($arrFilterQuery)) {
     $this->arrExpense = $this->store->getAll();
     } else {   

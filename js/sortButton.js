@@ -1,12 +1,9 @@
 function sortButton(pushedBtn) {
-  console.log("etto");
-  let sortButton = pushedBtn;
-  let ascImg = sortButton.querySelector('.img-sort-asc');
-  let descImg = sortButton.querySelector('.img-sort-desc');
-  let ascInput = sortButton.querySelector('#ascDate');
-  let descInput = sortButton.querySelector('#descDate');
-  console.log(ascInput);
-  console.log(descInput);
+  resetCheckedOnSelect();
+  let ascInput = pushedBtn.children[1];
+  let descInput = pushedBtn.children[2];
+  let ascImg = pushedBtn.children[3];
+  let descImg = pushedBtn.children[4];
 
   if (ascImg.classList.contains('sort-img-hidden')) {
     ascImg.classList.remove('sort-img-hidden');
@@ -19,7 +16,12 @@ function sortButton(pushedBtn) {
     ascImg.classList.add('sort-img-hidden');   
     descInput.setAttribute('checked', true);
     ascInput.removeAttribute('checked');
-    
-    
+  }
+}
+
+function resetCheckedOnSelect() {
+  let sortInputs = document.querySelectorAll('input-sort');
+  for (let sortInputsIndex = 0; sortInputsIndex < sortInputs.lendth; sortInputsIndex++) {
+    sortInputs[sortInputsIndex].removeAttribute('checked');
   }
 }

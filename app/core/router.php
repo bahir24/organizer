@@ -29,6 +29,8 @@ class Route
 		} else {
 			Route::ErrorPage404();
 		}
+		
+
 		if (class_exists($ctrlName)) {
 			$ctrl = new $ctrlName($_POST);
 			$act = $actName;

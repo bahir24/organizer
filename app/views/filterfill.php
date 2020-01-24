@@ -7,18 +7,11 @@
           <div class="col-3">
             <h6 class="mb-1">По дате создания</h6>
             <div class="form-group mb-1">
-              <input type="date" form="filterQuery" name="startPurchaseDate" class="form-control form-control-sm" id="startPurchaseDate" value="
-              <?php if ($this->arrFilter->startPurchaseDate) {
-                echo date("Y-m-d", $this->arrFilter->startPurchaseDate);}
-              ?>
-              ">
+              <input type="date" form="filterQuery" name="startPurchaseDate" class="form-control form-control-sm" id="startPurchaseDate" value="<?php if ($this->arrFilter->startPurchaseDate) {
+echo date("Y-m-d", $this->arrFilter->startPurchaseDate);}?>">
             </div>
             <div class="form-group mb-1">
-              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control form-control-sm" id="endPurchaseDate" min="2020-01-12" value="
-              <?php if($this->arrFilter->endPurchaseDate) {
-                echo date("Y-m-d", $this->arrFilter->endPurchaseDate);}
-              ?>
-              ">
+              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control form-control-sm" id="endPurchaseDate" value="<?php if($this->arrFilter->endPurchaseDate) {echo date("Y-m-d", $this->arrFilter->endPurchaseDate);}?>">
             </div>
           </div>
           <div class="col-3">          
@@ -87,19 +80,10 @@
           <div class="col-3">
             <h6 class="mb-1">По цене</h6>
             <div class="form-group mb-1">
-              <input type="text" form="filterQuery" class="form-control form-control-sm" id="startPrice" placeholder="От" name="startPrice" value="
-                <?php if ($this->arrFilter->startPrice) {
-                  echo $this->arrFilter->startPrice;}
-                ?>
-                ">
+              <input type="text" form="filterQuery" class="form-control form-control-sm" id="startPrice" placeholder="От" name="startPrice" value="<?php if ($this->arrFilter->startPrice) {echo $this->arrFilter->startPrice;}?>">
             </div>
             <div class="form-group mb-1">
-              <input type="text" form="filterQuery" class="form-control form-control-sm" id="endPrice" placeholder="До" name="endPrice" value="
-                <?php
-                  if($this->arrFilter->endPrice) {
-                    echo $this->arrFilter->endPrice;}
-                ?>
-                ">
+              <input type="text" form="filterQuery" class="form-control form-control-sm" id="endPrice" placeholder="До" name="endPrice" value="<?php if($this->arrFilter->endPrice) {echo $this->arrFilter->endPrice;}?>">
             </div>
           </div>
         </div>

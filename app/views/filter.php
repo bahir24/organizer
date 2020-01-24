@@ -10,7 +10,7 @@
               <input type="date" form="filterQuery" name="startPurchaseDate" class="form-control form-control-sm" id="startPurchaseDate">
             </div>
             <div class="form-group mb-1">
-              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control form-control-sm" id="endPurchaseDate" min="2020-01-12">
+              <input type="date" form="filterQuery" name="endPurchaseDate" class="form-control form-control-sm" id="endPurchaseDate">
             </div>
           </div>
           <div class="col-3">

@@ -2,38 +2,38 @@
   <thead class="table-expenses-head">
     <tr>
       <th scope="col" class="date-sort">
-        <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+        <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
           <h6 class="sort-btn-head">Дата</h6>          
-          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
-          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <input class="input-sort" id="ascDate" form="filterQuery" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" form="filterQuery" type="radio" name="sortByDate" value="DESC">          
           <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+          <img src="/img/sort_down.svg" class="img-sort-desc">
         </button>
       
       </th>
       <th scope="col"  class="category-sort">
-         <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+         <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
           <h6 class="sort-btn-head">Категория</h6>          
-          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
-          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <input class="input-sort" id="ascCategory" form="filterQuery" type="radio" name="sortByCategory" value="ASC">  <input class="input-sort" id="descCategory" form="filterQuery" type="radio" name="sortByCategory" value="DESC">          
           <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+          <img src="/img/sort_down.svg" class="img-sort-desc">
         </button>
       
     </th>
       <th scope="col"  class="subcategory-sort">
-        <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+        <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
           <h6 class="sort-btn-head">Подкатегория</h6>          
-          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
-          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <input class="input-sort" id="ascSubcategory" form="filterQuery" type="radio" name="sortBySubcategory" value="ASC">  <input class="input-sort" id="descSubcategory" form="filterQuery" type="radio" name="sortBySubcategory" value="DESC">          
           <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+          <img src="/img/sort_down.svg" class="img-sort-desc">
         </button> 
       
     </th>
       <th scope="col" class="price-sort">
-        <button type="submit" class="sort-query-btn" onclick='sortButton(this)'>
+        <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
           <h6 class="sort-btn-head">Цена</h6>          
-          <input class="input-sort" id="ascDate" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" type="radio" name="sortByDate" value="DESC"  checked>
-          <img src="/img/sort_down.svg" class="img-sort-desc">
+          <input class="input-sort" id="ascPrice" form="filterQuery" type="radio" name="sortByPrice" value="ASC">  <input class="input-sort" id="descPrice" form="filterQuery" type="radio" name="sortByPrice" value="DESC">          
           <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
+          <img src="/img/sort_down.svg" class="img-sort-desc">
         </button> 
       
     </th>
@@ -45,7 +45,6 @@
     <?php
     foreach($this->arrExpense as $row) {
       $row->purchaseDate = $row->dateFormat($row->purchaseDate);
-      $row->updatedDate = $row->dateFormat($row->updatedDate);
       echo 
         "<tr class='expense-row-$row->id'>
           <th scope='row'>$row->purchaseDate</th>          
