@@ -1,33 +1,43 @@
 <?php
 
-class StoreBase {
+namespace app\stores;
+
+use PDO;
+use app\models\QueryParams;
+
+class StoreBase
+{
 	protected $pdo;
 	protected $table;
 	protected $entity;
 	public $db = 'db/organizer.db';
 
-	public function __construct($db, $table) {
+	public function __construct($db, $table)
+	{
 		$this->table = $table;
-		$this->pdo = new PDO('sqlite:'.$db);
+		$this->pdo = new PDO('sqlite:' . $db);
 		$this->pdo->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->pdo->SetAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 	}
 
-	public function getById(int $id) {
+	public function getById(int $id)
+	{
 		$sql = "SELECT * FROM $this->table WHERE id = $id";
 		$query = $this->pdo->query($sql);
 		$query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
 		return $query->fetch();
 	}
 
-	public function getAll() {
+	public function getAll()
+	{
 		$sql = "SELECT * FROM $this->table";
 		$query = $this->pdo->query($sql);
 		$query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
 		return $query->fetchAll();
 	}
 
-	public function getTotal() {
+	public function getTotal()
+	{
 		$sql = "SELECT COUNT() as count FROM $this->table";
 		$query = $this->pdo->query($sql);
 		$query->setFetchMode(PDO::FETCH_ASSOC);
@@ -35,7 +45,8 @@ class StoreBase {
 		return (int) $result["count"];
 	}
 
-	public function getPaged(QueryParams $queryParams) {
+	public function getPaged(QueryParams $queryParams)
+	{
 		$skip = $queryParams->pageNumber * $queryParams->pageSize;
 		$sql = "SELECT * FROM $this->table ORDER BY 
 		$queryParams->orderField $queryParams->order LIMIT $skip, $queryParams->pageSize";
@@ -44,29 +55,32 @@ class StoreBase {
 		return $query->fetchAll();
 	}
 
-	
 
-	public function delete(int $id) {
+
+	public function delete(int $id)
+	{
 		$sql = "DELETE FROM $this->table WHERE id = $id";
 		$this->pdo->exec($sql);
 	}
 
-	protected function getKeys($obj, $excludes = null) {
+	protected function getKeys($obj, $excludes = null)
+	{
 		if (!$obj) {
 			return null;
 		}
 		$keys = array_keys((array) $obj);
-			if ($excludes) {
-				foreach ($excludes as $value) {
-					if (($key = array_search($value, $keys)) !== false) {
-						unset($keys[$key]);
-					}
+		if ($excludes) {
+			foreach ($excludes as $value) {
+				if (($key = array_search($value, $keys)) !== false) {
+					unset($keys[$key]);
 				}
 			}
+		}
 		return $keys;
 	}
 
-	public function objectKeysToString($obj, $excludes = null, string $glue = ",") {
+	public function objectKeysToString($obj, $excludes = null, string $glue = ",")
+	{
 		$keys = $this->getKeys($obj, $excludes);
 		if (!$keys) {
 			return '';
@@ -74,7 +88,8 @@ class StoreBase {
 		return implode($glue, $keys);
 	}
 
-	public function objectKeysToPlaceholdersString($obj, $excludes = null, string $glue = ",") {
+	public function objectKeysToPlaceholdersString($obj, $excludes = null, string $glue = ",")
+	{
 		$keys = $this->getKeys($obj, $excludes);
 		if (!$keys) {
 			return '';
@@ -85,7 +100,8 @@ class StoreBase {
 		return implode($glue, $arr);
 	}
 
-	public function objectKeysToSetPairsString($obj, $excludes = null, string $glue = ",") {
+	public function objectKeysToSetPairsString($obj, $excludes = null, string $glue = ",")
+	{
 		$keys = $this->getKeys($obj, $excludes);
 		if (!$keys) {
 			return '';
@@ -96,7 +112,8 @@ class StoreBase {
 		return implode($glue, $arr);
 	}
 
-	public function objectToValues($obj, $excludes = null) {
+	public function objectToValues($obj, $excludes = null)
+	{
 		if (!$obj) {
 			return '';
 		}

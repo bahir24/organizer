@@ -1,7 +1,52 @@
 <?php
-class Route
+
+namespace app\core;
+
+use app\controllers\MainController;
+
+class Router
 {
+
+
 	public static function start()
+	{
+		$controllersNamespace = 'app\\controllers\\';
+		
+		$exclusions = array("css", "js");
+
+		$controllerName = 'Main';
+		$actionName = 'index';
+		
+		if (in_array('kitchen', $exclusions)) {
+			return;
+		}
+
+		$arrRoutes = explode('/', $_SERVER['REQUEST_URI']);
+		if (!empty($arrRoutes[1])) {
+			$controllerName = $arrRoutes[1];
+		}
+
+		if (!empty($arrRoutes[2])) {
+			$actionName = $arrRoutes[2];
+		}
+				
+		$controllerName .= 'Controller';
+		$controllerName = $controllersNamespace . $controllerName;
+		$actionName .= 'Action';
+
+		if (class_exists($controllerName)) {
+			$controller = new $controllerName();
+			
+			if (method_exists($controller, $actionName)) 
+				$controller->$actionName();
+			else 
+				Router::ErrorPage404();
+			
+		}
+	}
+	
+
+	public static function start_old()
 	{
 		$ctrlName = 'main';
 		$actName = 'index';
@@ -27,7 +72,7 @@ class Route
 		if (file_exists($ctrlPath)) {
 			include "app/controllers/".$ctrlFile;
 		} else {
-			Route::ErrorPage404();
+			Router::ErrorPage404();
 		}
 		if (class_exists($ctrlName)) {
 			$ctrl = new $ctrlName($_POST);
@@ -35,10 +80,11 @@ class Route
 			if (method_exists($ctrl, $act)) {
 				$ctrl->$act($_POST);
 			} else {
-				Route::ErrorPage404();
+				Router::ErrorPage404();
 			}
 		}
 	}
+
 	public static function ErrorPage404()
 	{
 		$host = 'http://'.$_SERVER['HTTP_HOST'].'/';
