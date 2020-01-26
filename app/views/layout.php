@@ -14,14 +14,13 @@
   <header class="header">
     <div class="container">
       <?php
-      include "app/views/menu.php";
+        include "app/views/menu.php";
       ?>
     </div>
   </header>
+  
   <?php
-  include 'app/views/'."$this->sectionFeatures".".php";
-  include "app/views/footer.php";
-
+    include "app/views/" . "$this->sectionFeatures" . ".php";
   ?>
   <script src="/js/categoryButtons.js"></script>
   <script src="/js/filterNoReset.js"></script>

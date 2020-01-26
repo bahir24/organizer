@@ -1,14 +1,22 @@
 <?php
 
-class ExpensesStore extends StoreBase {
+namespace app\stores;
+
+use PDO;
+use app\entities\ExpenseEntity;
+use app\models\Expense;
+
+class ExpensesStore extends StoreBase
+{
 	protected $entity = ExpenseEntity::class;
 
-	function __construct($db) {
+	function __construct($db)
+	{
 		parent::__construct($db, 'expenses');
-	
 	}
 
-	public function add(ExpenseEntity $expense)	{
+	public function add(ExpenseEntity $expense)
+	{
 		$columns = $this->objectKeysToString($expense, ['id']);
 		$placeholders = $this->objectKeysToPlaceholdersString($expense, ['id']);
 		$expense->purchaseDate = strtotime($expense->purchaseDate);
@@ -19,30 +27,41 @@ class ExpensesStore extends StoreBase {
 		$query->execute($values);
 	}
 
-	public function update(ExpenseEntity $expense) {
+	public function update(ExpenseEntity $expense)
+	{
 		$setPairs = $this->objectKeysToSetPairsString($expense, ['id']);
 		$expense->purchaseDate = strtotime($expense->purchaseDate);
 		$values = $this->objectToValues($expense);
 		$sql = "UPDATE $this->table SET $setPairs WHERE id = :id";
-		$query = $this->pdo->prepare($sql);		
+		$query = $this->pdo->prepare($sql);
 		$query->execute($values);
 	}
 
+<<<<<<< HEAD:app/stores/expensesStore.php
 	public function getAll() {
 		$sql = "SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId	LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId";
+=======
+	public function getAll()
+	{
+		$sql = "SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId	LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ORDER BY id DESC";
+>>>>>>> c6dc62343b6bb020bbd4957bcdb3eff6dc49fcb7:app/stores/ExpensesStore.php
 		$query = $this->pdo->query($sql);
-		if(class_exists('Expense')) {            		
-		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);		
+		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);
+
 		return $query->fetchAll();
-		}
 	}
 
-	
-	public function getByFilter($queryParams) {
-		$query = $this->pdo->query($queryParams);
-		if(class_exists('Expense')) {            		
-		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);		
+	public function getByFilter($queryParams)
+	{
+		$sql = $queryParams["sql"];
+		$values = $queryParams["values"];
+		
+		$query = $this->pdo->prepare($sql);
+		$query->execute($values);
+
+		//$query = $this->pdo->query($queryParams);
+		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);
+		
 		return $query->fetchAll();
 	}
-}
 }
