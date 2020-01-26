@@ -21,41 +21,57 @@ class QueryParams
 	public $endQuantity;
 	public $startSum;
 	public $endtSum;
-	public $sql;
 
-	public function __construct($queryParams)
+	//public $sql;
+
+	public function __construct()
 	{
 		$this->order = 'DESC';
-		$this->orderField = 'id';
+		$this->orderField = 'purchaseDate';
 		$this->pageNumber = 0;
 		$this->pageSize = 20;
-		$this->sql = 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ';
 
-		foreach ($queryParams as $queryKey => $queryParam) {
-			if (strpos($queryKey, 'Date')) {
-				$queryParam = strtotime($queryParam);
-			}
-			$this->$queryKey = $queryParam;
-		}
-		$this->addFilterByVar($this->startPurchaseDate, $this->endPurchaseDate, 'purchaseDate');
-		$this->addFilterByVar($this->startUpdatedDate, $this->endUpdatedDate, 'updatedDate');
-		$this->addFilterByVar($this->categoryId, null, 'categoryId');
-		$this->addFilterByVar($this->subcategoryId, null, 'subcategoryId');
-		$this->addFilterByVar($this->startPrice, $this->endPrice, 'price');
+		//$this->sql = 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ';
+
+		// foreach ($queryParams as $queryKey => $queryParam) {
+		// 	if (strpos($queryKey, 'Date')) {
+		// 		$queryParam = strtotime($queryParam);
+		// 	}
+		// 	$this->$queryKey = $queryParam;
+		// }
+		// $this->addFilterByVar($this->startPurchaseDate, $this->endPurchaseDate, 'purchaseDate');
+		// $this->addFilterByVar($this->startUpdatedDate, $this->endUpdatedDate, 'updatedDate');
+		// $this->addFilterByVar($this->categoryId, null, 'categoryId');
+		// $this->addFilterByVar($this->subcategoryId, null, 'subcategoryId');
+		// $this->addFilterByVar($this->startPrice, $this->endPrice, 'price');
 	}
 
-	public function addFilterByVar($startVar, $endVar, $baseFieldName)
+	public static function CreateFromQuery()
 	{
-		if ($this->sql == 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ') {
-			$queryBefore = 'WHERE ';
-		} else {
-			$queryBefore = ' AND ';
+		if (is_null($_POST))
+			return null;
+
+		$result = new QueryParams;
+
+		foreach ($_POST as $name => $value) {
+            $result->$name = $value;
 		}
-		if (($startVar) && ($endVar)) {
-			$this->sql .= $queryBefore . $baseFieldName . " BETWEEN " . $startVar . " AND " . $endVar . " ";
-		} elseif (($startVar) || ($endVar)) {
-			$this->sql .= $queryBefore . "expenses." . $baseFieldName . "=";
-			$this->sql .= $startVar ? $startVar : $endVar;
-		}
+		
+		return $result;
 	}
+
+	// public function addFilterByVar($startVar, $endVar, $baseFieldName)
+	// {
+	// 	if ($this->sql == 'SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses	LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ') {
+	// 		$queryBefore = 'WHERE ';
+	// 	} else {
+	// 		$queryBefore = ' AND ';
+	// 	}
+	// 	if (($startVar) && ($endVar)) {
+	// 		$this->sql .= $queryBefore . $baseFieldName . " BETWEEN " . $startVar . " AND " . $endVar . " ";
+	// 	} elseif (($startVar) || ($endVar)) {
+	// 		$this->sql .= $queryBefore . "expenses." . $baseFieldName . "=";
+	// 		$this->sql .= $startVar ? $startVar : $endVar;
+	// 	}
+	// }
 }
