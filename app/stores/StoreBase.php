@@ -45,16 +45,6 @@ class StoreBase
 		return (int) $result["count"];
 	}
 
-<<<<<<< HEAD:app/core/store.php
-	// public function getPaged(QueryParams $queryParams) {
-	// 	$skip = $queryParams->pageNumber * $queryParams->pageSize;
-	// 	$sql = "SELECT * FROM $this->table ORDER BY 
-	// 	$queryParams->orderField $queryParams->order LIMIT $skip, $queryParams->pageSize";
-	// 	$query = $this->pdo->query($sql);
-	// 	$query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
-	// 	return $query->fetchAll();
-	// }
-=======
 	public function getPaged(QueryParams $queryParams)
 	{
 		$skip = $queryParams->pageNumber * $queryParams->pageSize;
@@ -64,7 +54,6 @@ class StoreBase
 		$query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
 		return $query->fetchAll();
 	}
->>>>>>> c6dc62343b6bb020bbd4957bcdb3eff6dc49fcb7:app/stores/StoreBase.php
 
 
 

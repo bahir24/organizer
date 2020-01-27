@@ -8,17 +8,7 @@ use app\services\ExpenseQueryBuilder;
 
 class MainController extends ControllerBase
 {
-    public $sectionSpecify = "filter";
-
-    function __construct()
-    {
-        $arrFilterQuery = [];
-
-        parent::__construct();
-        // if (array_key_exists('startPurchaseDate', $arrFilterQuery)) {
-        //   $this->arrFilter = new QueryParams($arrFilterQuery);
-        // }
-    }
+    public $sectionSpecify = "filter";    
 
     public function indexAction()
     {
