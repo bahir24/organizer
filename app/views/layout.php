@@ -27,6 +27,7 @@
   <script src="/js/filterNoReset.js"></script>
   <script src="/js/sortButton.js"></script>
   <script src="/js/deleteButton.js"></script>
+  <script src="/js/addButton.js"></script>
   <script src="/js/prepareUpdate.js"></script>
   <script src="/js/jquery.slim.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>

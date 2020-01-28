@@ -31,17 +31,16 @@ class MainController extends ControllerBase
     public function addExpenseAction()
     {
         $exEntity = new ExpenseEntity;
-        $exEntity->postStrToObject($_POST);
+        $exEntity->postStrToObject($_POST);      
         $this->store->add($exEntity);
-        header("Location: /");
     }
 
     public function updateExpenseAction()
     {
         $exEntity = new ExpenseEntity;
         $exEntity->postStrToObject($_POST);
-        $this->store->update($exEntity);
+        // $this->store->update($exEntity);
 
-        header("Location: /");
+        // header("Location: /");
     }
 }
