@@ -49,12 +49,9 @@ class ExpensesStore extends StoreBase
 	public function getByFilter($queryParams)
 	{
 		$sql = $queryParams["sql"];
-		$values = $queryParams["values"];
-		
+		$values = $queryParams["values"];		
 		$query = $this->pdo->prepare($sql);
 		$query->execute($values);
-
-		//$query = $this->pdo->query($queryParams);
 		$query->setFetchMode(PDO::FETCH_CLASS, Expense::class);
 		
 		return $query->fetchAll();

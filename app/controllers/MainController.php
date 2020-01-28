@@ -8,24 +8,14 @@ use app\services\ExpenseQueryBuilder;
 
 class MainController extends ControllerBase
 {
-    public $sectionSpecify = "filter";    
+    public $sectionSpecify = "filter";
 
     public function indexAction()
     {
         $queryParams = QueryParams::CreateFromQuery();
         $queryWithValues = ExpenseQueryBuilder::BuildQuery($queryParams);
-
         $this->arrExpense = $this->store->getByFilter($queryWithValues);
-
-
-        // if (empty($this->arrFilter->sql)) {
-        //     $this->arrExpense = $this->store->getAll();
-        // } else {
-        //     $this->viewBuild->arrFilter = $this->arrFilter;
-        //     $this->arrExpense = $this->store->getByFilter($this->arrFilter->sql);
-        //     $this->sectionSpecify = 'filterfill';
-        // }
-
+        $this->viewBuild->arrFilter = $queryParams;
         $this->viewBuild->sectionFeatures = $this->sectionSpecify;
         $this->viewBuild->arrExpense = $this->arrExpense;
         $this->viewBuild->pageRender();
@@ -33,10 +23,9 @@ class MainController extends ControllerBase
 
     public function deleteAction()
     {
-        $exEntity = new ExpenseEntity;
-        $exEntity->postStrToObject($_POST);
-        $this->store->delete($exEntity->id);
-        header("Location: http://organizer.com/");
+        $queryParams = QueryParams::CreateFromQuery();
+        echo $queryParams->deleteExpenseId;
+        $this->store->delete($queryParams->deleteExpenseId);
     }
 
     public function addExpenseAction()
@@ -44,7 +33,7 @@ class MainController extends ControllerBase
         $exEntity = new ExpenseEntity;
         $exEntity->postStrToObject($_POST);
         $this->store->add($exEntity);
-        header("Location: http://organizer.com/");
+        header("Location: /");
     }
 
     public function updateExpenseAction()
@@ -53,6 +42,6 @@ class MainController extends ControllerBase
         $exEntity->postStrToObject($_POST);
         $this->store->update($exEntity);
 
-        header("Location: http://organizer.com/");
+        header("Location: /");
     }
 }

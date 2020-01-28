@@ -21,10 +21,12 @@
   
   <?php
     include "app/views/" . "$this->sectionFeatures" . ".php";
+    include "app/views/footer.php";
   ?>
   <script src="/js/categoryButtons.js"></script>
   <script src="/js/filterNoReset.js"></script>
   <script src="/js/sortButton.js"></script>
+  <script src="/js/deleteButton.js"></script>
   <script src="/js/prepareUpdate.js"></script>
   <script src="/js/jquery.slim.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>
