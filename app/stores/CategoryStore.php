@@ -26,4 +26,7 @@ class CategoryStore extends StoreBase
 		$query = $this->pdo->prepare($sql);
 		$query->execute(['name' => $category->name, 'id' => $category->id]);
 	}
+	public function tableName(){
+		return $this->table;
+	}
 }

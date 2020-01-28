@@ -83,11 +83,11 @@ button {
 }
 
 .filter-input {
-  max-height: 19vh;
+  max-height: 24vh;
 }
 
 .table-wrapper {
-  max-height: 69vh;
+  max-height: 64vh;
   display: flex;
 }
 
@@ -105,6 +105,11 @@ th {
   text-overflow: ellipsis;
   position: relative;
   overflow: hidden;
+  padding: 2px !important;
+}
+
+td {
+  justify-content: flex-end;
 }
 
 td:last-child,
@@ -137,8 +142,12 @@ th:nth-child(5) {
 td:nth-child(4),
 th:nth-child(4) {
   flex: 0.5;
-  justify-content: center;
+  /* justify-content: center; */
   width: 90px;
+}
+td:nth-child(3),
+th:nth-child(3) {
+  justify-content: flex-start;
 }
 
 td:nth-child(4)::after {
@@ -154,7 +163,7 @@ tr {
 }
 
 .table-expenses {
-  max-height: 69vh;
+  max-height: 62vh;
   display: block;
   margin-bottom: 0 !important;
 }
@@ -168,7 +177,7 @@ tr {
 .table-expenses-body {  
 display: block;
 position: relative;
-max-height: 65vh;
+max-height: 58vh;
 width: 100%;
   word-wrap: normal;
   overflow: auto;
