@@ -7,8 +7,6 @@ function sortButton(pushedBtn) {
   let descImg = pushedBtn.querySelector('.img-sort-desc');
   let filterForm = document.forms.filter;
   let orderFieldData = pushedBtn.dataset.orderField;
-  // console.log(filterFormData.get("categoryId"));
-// console.log(orderData);
   
   if (ascImg.classList.contains('sort-img-hidden')) {
     ascImg.classList.remove('sort-img-hidden');

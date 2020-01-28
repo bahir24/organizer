@@ -112,9 +112,13 @@ th {
 td:last-child,
 th:last-child {
   flex: 0.55;
-  /* justify-content: center; */
   width: 90px;
 }
+
+th:last-child {
+  justify-content: center;
+}
+
 
 td:last-child {
   justify-content: flex-end;
@@ -137,6 +141,10 @@ th:nth-child(4) {
   flex: 0.5;
   justify-content: center;
   width: 90px;
+}
+
+td:nth-child(4)::after {
+  content: '\00A0р.';
 }
 
 tr {
@@ -166,7 +174,6 @@ max-height: 65vh;
 width: 100%;
   word-wrap: normal;
   overflow: auto;
-  /* overflow-x:hidden; */
 }
 
 .make-button-wrap {
@@ -215,7 +222,6 @@ padding: 0 !important;
 .sort-btn-head {
   display: inline-flex;
   text-align: left;
-  /* position: absolute; */
   left: 0;
   top: 0;
   bottom: 0;
@@ -245,13 +251,11 @@ padding: 0 !important;
   margin-right: 2px;
 }
 
-.img-sort-desc,
-.img-sort-asc {
- opacity: 1;
-}
-
 .sort-img-hidden {
-  opacity: 0;
+  display: none;
 }
 
 
+.footer-field-data:after {
+  content: '\00A0р.';
+}

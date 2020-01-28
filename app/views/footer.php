@@ -12,7 +12,6 @@
           <h6>За год</h6>
         </div>
         <div class="footer-field-data"></div>
-        <h4>
       </div>
       <div class="col-3 total-period">
         <div class="footer-field-head">
