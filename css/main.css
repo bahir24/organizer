@@ -251,7 +251,7 @@ padding: 0 !important;
 }
 
 .sort-img-hidden {
-  transition: opacity 0.3s;
+  /* transition: opacity 0.3s; */
   opacity: 0;
 }
 
