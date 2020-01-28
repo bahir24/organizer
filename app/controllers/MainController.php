@@ -39,8 +39,6 @@ class MainController extends ControllerBase
     {
         $exEntity = new ExpenseEntity;
         $exEntity->postStrToObject($_POST);
-        // $this->store->update($exEntity);
-
-        // header("Location: /");
+        $this->store->update($exEntity);
     }
 }

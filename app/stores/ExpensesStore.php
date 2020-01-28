@@ -31,6 +31,7 @@ class ExpensesStore extends StoreBase
 	{
 		$setPairs = $this->objectKeysToSetPairsString($expense, ['id']);
 		$expense->purchaseDate = strtotime($expense->purchaseDate);
+		$expense->updatedDate = strtotime(date('d-m-Y'));
 		$values = $this->objectToValues($expense);
 		$sql = "UPDATE $this->table SET $setPairs WHERE id = :id";
 		$query = $this->pdo->prepare($sql);
