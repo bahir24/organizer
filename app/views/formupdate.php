@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form class="w-100" action="main/updateExpense" method="POST" id="formUpdateExpense">
+          <form class="w-100" action="main/updateExpense" name="updateExpense" method="POST" id="formUpdateExpense">
               <div class="form-group">
                 <div class="input-group mb-2">
                 <div class="btn-group dropright w-100 btn-group-category">
@@ -79,7 +79,7 @@
           </form>        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Отмена</button>
-          <button type="submit" form="formUpdateExpense" class="btn btn-success btn-lg">Записать</button>
+          <button type="button" onclick="updateButton();" form="formUpdateExpense" class="btn btn-success btn-lg">Записать</button>
         </div>
       </div>
     </div>

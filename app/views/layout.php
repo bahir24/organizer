@@ -14,19 +14,22 @@
   <header class="header">
     <div class="container">
       <?php
-      include "app/views/menu.php";
+        include "app/views/menu.php";
       ?>
     </div>
   </header>
+  
   <?php
-  include 'app/views/'."$this->sectionFeatures".".php";
-  include "app/views/footer.php";
-
+    include "app/views/" . "$this->sectionFeatures" . ".php";
+    include "app/views/footer.php";
   ?>
   <script src="/js/categoryButtons.js"></script>
   <script src="/js/countSumFooter.js"></script>
   <script src="/js/filterNoReset.js"></script>
   <script src="/js/sortButton.js"></script>
+  <script src="/js/deleteButton.js"></script>
+  <script src="/js/addButton.js"></script>
+  <script src="/js/updateButton.js"></script>
   <script src="/js/prepareUpdate.js"></script>
   <script src="/js/jquery.slim.min.js"></script>
   <script src="/js/bootstrap.bundle.min.js"></script>

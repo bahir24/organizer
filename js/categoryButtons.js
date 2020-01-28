@@ -1,6 +1,6 @@
 //TODO convert to var categoryButton
 
-function changeHead(selectedLink) {  
+function changeHead(selectedLink) { 
   let currentElement = selectedLink.closest('.form-group');
   let slaveElement = currentElement.nextElementSibling;
   let categoryButton = currentElement.querySelector('.btn-group-category');
@@ -13,8 +13,8 @@ function changeHead(selectedLink) {
   sortSubcategories(selectedLink);
 }
 
-function sortSubcategories(selectedLink) { 
-  let currentElement = selectedLink.closest('.form-group');   
+function sortSubcategories(selectedLink) {
+  let currentElement = selectedLink.closest('.form-group');
   let slaveElement = currentElement.nextElementSibling;  
   let categoryButton = currentElement.querySelector('.btn-group-category');  
   let subCategoryButton = slaveElement.querySelector('.btn-group-subcategory');  
