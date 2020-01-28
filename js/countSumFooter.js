@@ -43,6 +43,6 @@ function countByPeriods() {
 
 countByPeriods();
 
-footerDataFields[1].textContent = footerSum.sumYear;
-footerDataFields[2].textContent = footerSum.sumMonth;
-footerDataFields[3].textContent = footerSum.sumWeek;
+footerDataFields[0].textContent = footerSum.sumYear;
+footerDataFields[1].textContent = footerSum.sumMonth;
+footerDataFields[2].textContent = footerSum.sumWeek;

@@ -3,7 +3,7 @@
     <div class="row h-100">
       <div class="col-3 total-period">
         <div class="footer-field-head"></div>
-        <div class="footer-field-data">
+        <div class="footer-field-main-data">
           <h4>Всего:</h4>
         </div>        
       </div>

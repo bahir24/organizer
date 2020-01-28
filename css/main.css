@@ -96,8 +96,6 @@ button {
   padding-top: 0px;
 }
 
-
-
 td,
 th {
   width: fit-content;
@@ -254,7 +252,6 @@ padding: 0 !important;
 .sort-img-hidden {
   display: none;
 }
-
 
 .footer-field-data:after {
   content: '\00A0р.';
