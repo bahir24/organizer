@@ -1,42 +1,38 @@
 <table class="table table-sm table-striped table-expenses">
   <thead class="table-expenses-head">
     <tr>
-      <th scope="col" class="date-sort">
-        <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
-          <h6 class="sort-btn-head">Дата</h6>          
-          <input class="input-sort" id="ascDate" form="filterQuery" type="radio" name="sortByDate" value="ASC">  <input class="input-sort" id="descDate" form="filterQuery" type="radio" name="sortByPurchaseDate" value="DESC">          
-          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
-          <img src="/img/sort_down.svg" class="img-sort-desc">
-        </button>
-      
-      </th>
-      <th scope="col"  class="category-sort">
-         <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
-          <h6 class="sort-btn-head">Категория</h6>          
-          <input class="input-sort" id="ascCategory" form="filterQuery" type="radio" name="sortByCategoryId" value="ASC">  <input class="input-sort" id="descCategory" form="filterQuery" type="radio" name="sortByCategoryId" value="DESC">          
-          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
-          <img src="/img/sort_down.svg" class="img-sort-desc">
-        </button>
-      
-    </th>
-      <th scope="col"  class="subcategory-sort">
-        <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
-          <h6 class="sort-btn-head">Подкатегория</h6>          
-          <input class="input-sort" id="ascSubcategory" form="filterQuery" type="radio" name="sortBySubcategoryId" value="ASC">  <input class="input-sort" id="descSubcategory" form="filterQuery" type="radio" name="sortBySubcategoryId" value="DESC">          
-          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
-          <img src="/img/sort_down.svg" class="img-sort-desc">
-        </button> 
-      
-    </th>
-      <th scope="col" class="price-sort">
-        <button type="submit" class="sort-query-btn" form="filterQuery" onclick="sortButton(this)">
-          <h6 class="sort-btn-head">Цена</h6>          
-          <input class="input-sort" id="ascPrice" form="filterQuery" type="radio" name="sortByPrice" value="ASC">  <input class="input-sort" id="descPrice" form="filterQuery" type="radio" name="sortByPrice" value="DESC">          
-          <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
-          <img src="/img/sort_down.svg" class="img-sort-desc">
-        </button> 
-      
-    </th>
+    <?php
+      $arrSortButtons = [
+        $arrSortButton = [
+          "sortField" => "purchaseDate",
+          "buttonText" => "Дата",
+        ],
+        $arrSortButton = [
+          "sortField" => "categoryName",
+          "buttonText" => "Категория",
+        ],
+        $arrSortButton = [
+          "sortField" => "subcategoryName",
+          "buttonText" => "Подкатегория",
+        ],
+        $arrSortButton = [
+          "sortField" => "price",
+          "buttonText" => "Цена",
+        ],                              
+      ];
+      foreach($arrSortButtons as $sortButton){
+        echo "<th scope='col' class='date-sort'>
+        <button type='button' class='sort-query-btn' data-order-field='$sortButton[sortField]' onclick='sortButton(this)'>
+          <h6 class='sort-btn-head'>$sortButton[buttonText]</h6>";          
+          if(($this->arrFilter->orderField == $sortButton['sortField']) && ($this->arrFilter->order == 'ASC')){ echo "<img src='/img/sort_up.svg' class='img-sort-asc'>
+              <img src='/img/sort_down.svg' class='img-sort-desc sort-img-hidden'>";
+          } else {
+              echo "<img src='/img/sort_up.svg' class='img-sort-asc sort-img-hidden'>
+              <img src='/img/sort_down.svg' class='img-sort-desc'>";
+            }        
+          echo "</button></th>";
+      }
+    ?>           
       <th scope="col">Примечание</th>
       <th scope="col">Действия</th>
     </tr>

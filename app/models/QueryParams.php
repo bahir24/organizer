@@ -11,8 +11,6 @@ class QueryParams
 
 	public $startPurchaseDate;
 	public $endPurchaseDate;
-	public $startUpdatedDate;
-	public $endUpdatedDate;
 	public $categoryId;
 	public $subcategoryId;
 	public $startPrice;

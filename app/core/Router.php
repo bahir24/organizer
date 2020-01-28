@@ -17,12 +17,6 @@ class Router
 		$controllerName = 'Main';
 		$actionName = 'index';
 		
-
-		//TODO
-		if (in_array('kitchen', $exclusions)) {
-			return;
-		}
-
 		$arrRoutes = explode('/', $_SERVER['REQUEST_URI']);
 		if (!empty($arrRoutes[1])) {
 			$controllerName = $arrRoutes[1];

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row filter-input">
       <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
-      <form class="filter" action="" method="POST" id="filterQuery">
+      <form class="filter" action="" method="POST" id="filterQuery" name="filter">
         <div class="row">
           <div class="col-3">
             <h6 class="mb-1">По дате создания</h6>
@@ -101,6 +101,8 @@ echo $this->arrFilter->startPurchaseDate;}?>">
           </div>
         </div>
         <input type='hidden' name='id' class='delButtonId'>
+        <input type='hidden' name='order' class='order' value="DESC">
+        <input type='hidden' name='orderField' class='orderField' value="purchaseDate">
       </form>
       <?php
         include 'app/views/form.php';
@@ -109,12 +111,6 @@ echo $this->arrFilter->startPurchaseDate;}?>">
     </div>
     <div class="row table-wrapper">
       <?php
-      // $sortFilterSave = array();
-      // $lastOrder = $this->arrFilter->order;
-      // $lastOrderField = $this->arrFilter->orderField;
-      // $lastOrderField = str_replace('Id', '', $lastOrderField);
-      // $sortFilterSave[$lastOrderField.$lastOrder] = "checked";
-      // $sortFilterSave[$lastOrderField.$lastOrder.'img'] = "sort-img-hidden";
       include 'app/views/table.php';
     ?>
     </div>

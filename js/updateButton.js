@@ -8,5 +8,4 @@ function updateButton(){
       document.querySelector(".filter").submit();
     }
   }
-  console.log("update");
 }
