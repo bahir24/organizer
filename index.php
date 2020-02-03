@@ -1,10 +1,6 @@
 <?php
 
 use app\core\Router;
-use app\stores\CategoryStore;
-use app\entities\CategoryEntity;
-use app\entities\SubcategoryEntity;
-use app\entities\ExpenseEntity;
 
 
 error_reporting(E_ALL);

@@ -10,26 +10,30 @@ use app\stores\CategoryStore;
 use app\stores\SubcategoryStore;
 use app\stores\ExpensesStore;
 use app\views\View;
+use app\Config;
 
 class ControllerBase
 {
   protected $store;
   protected $viewBuild = View::class;
-  protected $db = "db/organizer.db";
   protected $pageTemplate = 'layout';
   protected $arrCategories = CategoryEntity::class;
   protected $arrSubcategories = SubcategoryEntity::class;
+  protected $settings = Config::class;
+
 
   function __construct()
   {
-    $categoryStore = new CategoryStore($this->db);
-    $subCategoryStore = new SubcategoryStore($this->db);
+    
+    $configDb = $this->settings::DB;    
+    $categoryStore = new CategoryStore($configDb['file']);
+    $subCategoryStore = new SubcategoryStore($configDb['file']);
     $this->arrCategories = $categoryStore->getAll();
     $this->arrSubcategories = $subCategoryStore->getAll();
     $this->viewBuild = new View;
     $this->viewBuild->pageLayout = $this->pageTemplate;
     $this->viewBuild->arrCategories = $this->arrCategories;
     $this->viewBuild->arrSubcategories = $this->arrSubcategories;
-    $this->store = new ExpensesStore($this->db);
+    $this->store = new ExpensesStore($configDb['file']);
   }
 }
