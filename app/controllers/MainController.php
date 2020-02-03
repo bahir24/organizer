@@ -31,7 +31,7 @@ class MainController extends ControllerBase
     public function addExpenseAction()
     {
         $exEntity = new ExpenseEntity;
-        $exEntity->postStrToObject($_POST);      
+        $exEntity->postStrToObject($_POST);
         $this->store->add($exEntity);
     }
 

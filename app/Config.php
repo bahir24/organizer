@@ -2,9 +2,9 @@
 
 namespace app;
 
-
-class Config {
-  const DB = [
-    'file' => 'db/organizer.db',
+class Config
+{
+    const DB = [
+        'file' => 'db/organizer.db',
   ];
-} 
+}

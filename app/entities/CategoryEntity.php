@@ -4,6 +4,6 @@ namespace app\entities;
 
 class CategoryEntity
 {
-	public $id;
-	public $name;
+    public $id;
+    public $name;
 }
