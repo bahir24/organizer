@@ -10,11 +10,11 @@ class StoreBase
 	protected $pdo;
 	protected $table;
 	protected $entity;
-	public $db = 'db/organizer.db';
 
 	public function __construct($db, $table)
 	{
 		$this->table = $table;
+
 		$this->pdo = new PDO('sqlite:' . $db);
 		$this->pdo->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->pdo->SetAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -61,6 +61,10 @@ class StoreBase
 	{
 		$sql = "DELETE FROM $this->table WHERE id = $id";
 		$this->pdo->exec($sql);
+	}
+
+	protected function getTablesNames(){
+		
 	}
 
 	protected function getKeys($obj, $excludes = null)

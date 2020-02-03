@@ -8,9 +8,9 @@ class CategoryStore extends StoreBase
 {
 	protected $entity = CategoryEntity::class;
 
-	public function __construct()
+	public function __construct($db)
 	{
-		parent::__construct($this->db, 'categories');
+		parent::__construct($db, 'categories');
 	}
 
 	public function add($name)

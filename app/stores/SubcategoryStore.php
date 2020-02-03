@@ -8,9 +8,9 @@ class SubcategoryStore extends StoreBase
 {
 	protected $entity = SubcategoryEntity::class;
 
-	public function __construct()
+	public function __construct($db)
 	{
-		parent::__construct($this->db, 'subcategories');
+		parent::__construct($db, 'subcategories');
 	}
 
 	public function add($categoryId, $name)

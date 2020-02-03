@@ -7,7 +7,7 @@ use app\models\QueryParams;
 class ExpenseQueryBuilder
 {
     private static $select = "SELECT expenses.*, categories.name AS categoryName, subcategories.name AS subcategoryName FROM expenses LEFT JOIN categories ON categories.id = expenses.categoryId LEFT JOIN subcategories ON subcategories.id = expenses.subcategoryId ";
-    private static $purchaseDateClause = " purchaseDate >= :startPurchaseDate AND purchaseDate <= :endPurchaseDate ";    
+    private static $purchaseDateClause = " purchaseDate >= :startPurchaseDate AND purchaseDate <= :endPurchaseDate ";
     private static $categoryIdClause = " expenses.categoryId = :categoryId ";
     private static $subcategoryIdClause = " expenses.subcategoryId = :subcategoryId ";
     private static $priceClause = " price >= :startPrice AND price <= :endPrice ";
@@ -31,7 +31,7 @@ class ExpenseQueryBuilder
             $values["startPurchaseDate"] = strtotime($params->startPurchaseDate);
             $values["endPurchaseDate"] = strtotime($params->endPurchaseDate);
             $isWhereAdded = true;
-        }       
+        }
 
         if (!ExpenseQueryBuilder::IsNullOrEmpty($params->categoryId)) {
             if ($isWhereAdded) {
@@ -42,9 +42,8 @@ class ExpenseQueryBuilder
 
             $sql .= ExpenseQueryBuilder::$categoryIdClause;
 
-						$values["categoryId"] = $params->categoryId;
-						$isWhereAdded = true;
-
+            $values["categoryId"] = $params->categoryId;
+            $isWhereAdded = true;
         }
 
         if (!ExpenseQueryBuilder::IsNullOrEmpty($params->subcategoryId)) {
@@ -56,9 +55,8 @@ class ExpenseQueryBuilder
 
             $sql .= ExpenseQueryBuilder::$subcategoryIdClause;
 
-						$values["subcategoryId"] = $params->subcategoryId;
-						$isWhereAdded = true;
-
+            $values["subcategoryId"] = $params->subcategoryId;
+            $isWhereAdded = true;
         }
 
         if (!ExpenseQueryBuilder::IsNullOrEmpty($params->startPrice) && !ExpenseQueryBuilder::IsNullOrEmpty($params->endPrice)) {
@@ -71,9 +69,8 @@ class ExpenseQueryBuilder
             $sql .= ExpenseQueryBuilder::$priceClause;
 
             $values["startPrice"] = $params->startPrice;
-						$values["endPrice"] = $params->endPrice;
-						$isWhereAdded = true;
-
+            $values["endPrice"] = $params->endPrice;
+            $isWhereAdded = true;
         }
 
         if (!ExpenseQueryBuilder::IsNullOrEmpty($params->orderField)) {

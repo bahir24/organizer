@@ -22,8 +22,8 @@ class ControllerBase
 
   function __construct()
   {
-    $categoryStore = new CategoryStore;
-    $subCategoryStore = new SubcategoryStore;
+    $categoryStore = new CategoryStore($this->db);
+    $subCategoryStore = new SubcategoryStore($this->db);
     $this->arrCategories = $categoryStore->getAll();
     $this->arrSubcategories = $subCategoryStore->getAll();
     $this->viewBuild = new View;
