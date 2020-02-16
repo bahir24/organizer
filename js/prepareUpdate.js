@@ -2,6 +2,7 @@ const modalUpdate = document.querySelector('#updateExpense');
 const formUpdate = modalUpdate.querySelector('form');
 const formInputs = formUpdate.querySelectorAll('input, textarea');
 
+
 function prepareUpdate(clickedButton){
   let expenseId = clickedButton.dataset.id;
   let expenseClassName = "." + "expense-row-" + expenseId;
