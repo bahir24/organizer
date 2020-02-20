@@ -1,6 +1,8 @@
 {
     "name": "mihail/organizer",
-    "description": "learn project",
+    "description": "Project for learning PHP. Web application for recording everyday expenses.",
+    "type": "project",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Mihail",
@@ -9,5 +11,17 @@
     ],
     "require": {
         "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": { 
+            "app\\core\\": "app/core/",
+            "app\\controllers\\": "app/controllers/",
+            "app\\": "app/",
+            "app\\entities\\": "app/entities/",
+            "app\\models\\": "app/models/",
+            "app\\services\\": "app/services/",
+            "app\\stores\\": "app/stores/",
+            "app\\views\\": "app/views/"
+        }
     }
 }

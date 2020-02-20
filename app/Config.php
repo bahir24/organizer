@@ -4,7 +4,5 @@ namespace app;
 
 class Config
 {
-    const DB = [
-        'file' => 'db/organizer.db',
-  ];
+    static $dbFileName = 'db/organizer.db';
 }

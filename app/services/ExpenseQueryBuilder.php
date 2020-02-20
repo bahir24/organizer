@@ -2,7 +2,7 @@
 
 namespace app\services;
 
-use app\models\QueryParams;
+use \app\models\QueryParams;
 
 class ExpenseQueryBuilder
 {
