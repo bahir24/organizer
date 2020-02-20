@@ -1,0 +1,130 @@
+<div class="row filter-input">
+    <h2 class="col-12 mb-2 text-center">Фильтр и сортировка</h2>
+    <form class="filter" action="" method="POST" id="filterQuery" name="filter">
+        <div class="row">
+            <div class="col-3">
+                <h6 class="mb-1">По дате создания</h6>
+                <div class="form-group mb-1">
+                    <input type="date" form="filterQuery" name="startPurchaseDate"
+                        class="form-control form-control-sm" id="startPurchaseDate" value="{{ arrFilter.startPurchaseDate }}">
+                </div>
+                <div class="form-group mb-1">
+                    <input type="date" form="filterQuery" name="endPurchaseDate"
+                        class="form-control form-control-sm" id="endPurchaseDate" value="{{ arrFilter.endPurchaseDate }}">
+                </div>
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-3">
+                <h6 class="mb-1">По принадлежности</h6>
+                <div class="form-group mb-1">
+                    <div class="input-group">
+                        <div class="btn-group dropright w-100 btn-group-category">
+                            <button type="button"
+                                class="btn btn-outline-primary btn-sm dropdown-toggle btn-category"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                {% if arrFilter.categoryId != null %}
+
+                                {% for category in arrCategories %}
+
+                                {% if category.id == arrFilter.categoryId %}
+
+                                {{ category.name }}
+
+                                {% endif %}
+
+                                {% endfor %}
+                                
+                                {% else %}
+                                Категория                                  
+                                {% endif %}
+                                
+                            </button>
+                            <div class="dropdown-menu">
+                                {% for category in arrCategories %}
+
+                                <button type='button' class='dropdown-item' data-id="{{ category.id }}" onclick="changeHead(this);">{{ category.name }}</button>
+                <div class='dropdown-divider'></div>
+
+                                {% endfor %}                                
+                            </div>
+                            <input type='hidden' form="filterQuery" name="categoryId"
+                                value="{{ arrFilter.categoryId }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-1">
+                    <div class="input-group">
+                        <div class="btn-group dropright w-100 btn-group-subcategory">
+                            <button type="button"
+                                class="btn btn-outline-primary btn-sm dropdown-toggle btn-category"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                {% if arrFilter.categoryId == null %}
+                                disabled
+                                {% endif %}
+                                >
+
+                                {% if arrFilter.subcategoryId != null %}
+
+                                {% for subcategory in arrSubcategories %}
+
+                                {% if subcategory.id == arrFilter.subcategoryId %}
+
+                                {{ category.name }}
+
+                                {% endif %}
+
+                                {% endfor %}
+                                
+                                {% else %}
+                                Подкатегория                                  
+                                {% endif %}
+
+                            </button>
+                            <div class="dropdown-menu">
+                                {% for subcategory in arrSubcategories %}
+                                <button type='button' class='dropdown-item' data-category-id="{{ subcategory.categoryId }}" onclick="changeHead(this);">{{ subcategory.name }}</button>
+                <div class='dropdown-divider'></div>
+
+                                {% endfor %}    
+                            </div>
+                            <input type='hidden' form="filterQuery" name="subcategoryId"
+                                value="{{ arrFilter.subcategoryId }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <h6 class="mb-1">По цене</h6>
+                <div class="form-group mb-1">
+                    <input type="text" form="filterQuery" class="form-control form-control-sm" id="startPrice"
+                        placeholder="От" name="startPrice" value="{{ arrFilter.startPrice }}">
+                </div>
+                <div class="form-group mb-1">
+                    <input type="text" form="filterQuery" class="form-control form-control-sm" id="endPrice"
+                        placeholder="До" name="endPrice" value="{{ arrFilter.endPrice }}">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-4">
+                <button type="reset" onclick="location.href = ''" form="filterQuery"
+                    class="btn btn-secondary btn-block">Сбросить фильры</button>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-success btn-block" data-toggle="modal"
+                    data-target="#addExpense">Добавить расход</button>
+            </div>
+            <div class="col-4">
+                <button type="submit" form="filterQuery" class="btn btn-primary btn-block">Фильтровать</button>
+            </div>
+        </div>
+        <input type='hidden' name='id' class='delButtonId'>
+        <input type='hidden' name='order' class='order'
+            value="{{ arrFilter.order }}">
+        <input type='hidden' name='orderField' class='orderField'
+            value="{{ arrFilter.orderField }}">
+    </form>
+    
+</div>

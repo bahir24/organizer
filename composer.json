@@ -1,0 +1,13 @@
+{
+    "name": "mihail/organizer",
+    "description": "learn project",
+    "authors": [
+        {
+            "name": "Mihail",
+            "email": "7074033@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    }
+}

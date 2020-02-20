@@ -1,5 +1,5 @@
 function changeHead(selectedLink) {
-    let currentElement = selectedLink.closest('.form-group');
+    let currentElement = selectedLink.closest('.form-group');    
     let slaveElement = currentElement.nextElementSibling;
     let categoryButton = currentElement.querySelector('.btn-group-category');
     let subCategoryButton = slaveElement.querySelector('.btn-group-subcategory');
@@ -14,7 +14,7 @@ function changeHead(selectedLink) {
 function sortSubcategories(selectedLink) {
     let currentElement = selectedLink.closest('.form-group');
     let slaveElement = currentElement.nextElementSibling;
-    let categoryButton = currentElement.querySelector('.btn-group-category');
+    let categoryButton = currentElement.querySelector('.btn-group-category');    
     let subCategoryButton = slaveElement.querySelector('.btn-group-subcategory');
     if (categoryButton.children[0].textContent !== 'Категория') {
         let subCategoryLinks = (subCategoryButton.children[1].querySelectorAll('button'));
@@ -22,6 +22,7 @@ function sortSubcategories(selectedLink) {
             subcategoryLink = subCategoryLinks[subCategoryLinksIndex];
             subcategoryLink.style.display = 'none';
             subcategoryLink.nextElementSibling.style.display = 'none';
+            console.log(categoryButton.children[2]);
             if (subcategoryLink.dataset.categoryId === categoryButton.children[2].value) {
                 subcategoryLink.style.display = 'block';
                 subcategoryLink.nextElementSibling.style.display = 'block';

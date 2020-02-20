@@ -11,8 +11,14 @@ class View
     public $arrCategories;
     public $arrSubcategories;
 
+    public function __construct(){        
+        $loader = new \Twig\Loader\FilesystemLoader('app/templates');
+        $twig = new \Twig\Environment($loader);
+        $this->template = $twig->load('layout.html', ['strict_variables' => true]);                
+    }
+
     public function pageRender()
     {
-        include 'app/views/' . $this->pageLayout . '.php';
+        echo $this->template->render(['arrFilter' => $this->arrFilter, 'arrExpense' => $this->arrExpense, 'arrCategories' => $this->arrCategories, 'arrSubcategories' => $this->arrSubcategories, 'sortButtons' => $this->sortButtons]);
     }
 }
