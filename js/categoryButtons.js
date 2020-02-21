@@ -22,7 +22,6 @@ function sortSubcategories(selectedLink) {
             subcategoryLink = subCategoryLinks[subCategoryLinksIndex];
             subcategoryLink.style.display = 'none';
             subcategoryLink.nextElementSibling.style.display = 'none';
-            console.log(categoryButton.children[2]);
             if (subcategoryLink.dataset.categoryId === categoryButton.children[2].value) {
                 subcategoryLink.style.display = 'block';
                 subcategoryLink.nextElementSibling.style.display = 'block';

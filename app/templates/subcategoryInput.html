@@ -1,0 +1,33 @@
+<div class="form-group mb-1">
+	<div class="input-group">
+		<div class="btn-group dropright w-100 btn-group-subcategory">
+			<button type="button" class="btn btn-outline-primary btn-sm dropdown-toggle btn-category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="sortSubcategories(document.querySelector('dropdown-item'));" {% if arrFilter.categoryId == null %} disabled {% endif %}>
+
+				{% if arrFilter.subcategoryId != null %}
+
+					{% for subcategory in arrSubcategories %}
+
+						{% if subcategory.id == arrFilter.subcategoryId %}
+
+							{{ category.name }}
+
+						{% endif %}
+
+					{% endfor %}
+
+				{% else %}
+					Подкатегория
+				{% endif %}
+
+			</button>
+			<div class="dropdown-menu">
+				{% for subcategory in arrSubcategories %}
+					<button type='button' class='dropdown-item' data-category-id="{{ subcategory.categoryId }}" onclick="changeHead(this);">{{ subcategory.name }}</button>
+					<div class='dropdown-divider'></div>
+
+				{% endfor %}
+			</div>
+			<input type='hidden' form="filterQuery" name="subcategoryId" value="{{ arrFilter.subcategoryId }}">
+		</div>
+	</div>
+</div>

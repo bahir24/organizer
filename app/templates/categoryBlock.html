@@ -1,0 +1,36 @@
+<div class="dropright expense-category-input">
+
+	<input class="category-id-input" type="hidden" name="categoryId">
+	<input class="subcategory-id-input" type="hidden" name="subcategoryId">
+
+
+	<button class="btn btn-secondary dropdown-toggle category-dropdown-btn" type="button" id="menuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Выберите категорию
+	</button>
+
+	<div class="dropdown-menu p-0 d-flex flex-column" aria-labelledby="menuButton">
+
+		{% for category in arrCategories %}
+
+			<div class="dropright btn-group btn-category">
+
+
+				<button class="btn btn-outline-primary btn-dropright-main" type="button" data-category-id="{{ category.id }}" onclick="updateCategoryInputValue(this);">{{ category.name }}</button>
+
+				<button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split btn-submenu p-0 btn-dropright-toggle" id="subMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="showSubCategories(event, this);"></button>
+
+				<div class="dropdown-menu dropdown-submenu p-0" aria-labelledby="subMenuButton">
+
+					{% for subcategory in arrSubcategories %}
+
+						<button class="btn btn-outline-primary btn-dropright-submenu w-100" data-subcategory-id="10" data-category-id="{{ subcategory.categoryId }}" onclick="updateCategoryInputValue(this);">{{ subcategory.name }}</button>
+
+
+					{% endfor %}
+
+				</div>
+				</div>
+
+			{% endfor %}
+
+		</div>
+		</div>

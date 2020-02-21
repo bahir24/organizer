@@ -252,3 +252,35 @@ tr {
 .footer-field-data:after {
     content: '\00A0р.';
 }
+
+.expense-category-input {
+    width: 100%;
+}
+
+.category-dropdown-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 400px;
+}
+
+
+
+.btn-dropright-main,
+.btn-dropright-toggle,
+.btn-dropright-submenu {
+    border-radius: 0;
+    border: none;
+}
+
+.btn-dropright-main,
+.btn-dropright-submenu {
+    flex: 2 !important;
+    white-space: nowrap;
+    /* min-width: 200px; */
+}
+
+.btn-dropright-toggle {
+    flex: .5 !important;
+    min-width: 30px;
+}
