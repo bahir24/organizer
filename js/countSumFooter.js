@@ -2,10 +2,11 @@ var countWeekStart = new Date;
 var countMonthStart = new Date;
 var countYearStart = new Date;
 
-countWeekStart.setDate(countWeekStart.getDay() - countWeekStart.getDay() + 1);
+countWeekStart.setDate(countWeekStart.getDate() - countWeekStart.getDay() + 1);
 countMonthStart.setDate(countMonthStart.getDate() - countMonthStart.getDate() + 1);
 countYearStart.setDate(countYearStart.getMonth() - countYearStart.getMonth());
 countYearStart.setDate(countYearStart.getDate() - countYearStart.getDate() + 1);
+
 
 var weekStart = countWeekStart.setHours(0, 0, 0, 0);
 var monthStart = countMonthStart.setHours(0, 0, 0, 0);
@@ -26,9 +27,9 @@ var footerSum = {
 
 function countByPeriods() {
     
-    for (var tableRowsIndex = 0; tableRowsIndex < tableRows.length; tableRowsIndex++) {
+    for (var tableRowsIndex = 1; tableRowsIndex < tableRows.length; tableRowsIndex++) {
         let tableRow = tableRows[tableRowsIndex];
-        let tableRowDate = tableRow.querySelector('th').textContent;
+        let tableRowDate = tableRow.children[2].textContent;
         var rowExpenseSum = tableRow.children[3].textContent;
         var formatTableRowDate = new Date(tableRowDate);
         switch (true) {
