@@ -7,13 +7,11 @@ use app\entities\SubcategoryEntity;
 use app\stores\CategoryStore;
 use app\stores\SubcategoryStore;
 use app\stores\ExpensesStore;
-use app\views\View;
 use app\Config;
 
 class ControllerBase
 {
     protected $store;
-    protected $viewBuild = View::class;
     protected $pageTemplate = 'layout';
     protected $arrCategories = CategoryEntity::class;
     protected $arrSubcategories = SubcategoryEntity::class;
@@ -25,10 +23,9 @@ class ControllerBase
         $subCategoryStore = new SubcategoryStore(Config::$dbFileName);
         $this->arrCategories = $categoryStore->getAll();
         $this->arrSubcategories = $subCategoryStore->getAll();
-        $this->viewBuild = new View;
-        $this->viewBuild->pageLayout = $this->pageTemplate;
-        $this->viewBuild->arrCategories = $this->arrCategories;
-        $this->viewBuild->arrSubcategories = $this->arrSubcategories;
+        $loader = new \Twig\Loader\FilesystemLoader('app/templates');
+        $twig = new \Twig\Environment($loader);
+        $this->template = $twig->load('layout.html', ['strict_variables' => true]);
         $this->store = new ExpensesStore(Config::$dbFileName);
     }
 }

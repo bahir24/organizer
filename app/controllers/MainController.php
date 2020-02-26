@@ -36,11 +36,8 @@ class MainController extends ControllerBase
         foreach ($this->arrExpense as $fieldData) {
             $fieldData->purchaseDate = date('Y-m-d', $fieldData->purchaseDate);            
         }
-        $this->viewBuild->arrFilter = $queryParams;
-        $this->viewBuild->sectionFeatures = $this->sectionSpecify;
-        $this->viewBuild->arrExpense = $this->arrExpense;
-        $this->viewBuild->sortButtons = $this->sortButtons;
-        $this->viewBuild->pageRender();
+        $this->arrFilter = $queryParams;
+        echo $this->template->render(['arrFilter' => $this->arrFilter, 'arrExpense' => $this->arrExpense, 'arrCategories' => $this->arrCategories, 'arrSubcategories' => $this->arrSubcategories, 'sortButtons' => $this->sortButtons]);
     }
 
     public function deleteAction()
