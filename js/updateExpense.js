@@ -1,5 +1,5 @@
-function updateButton(){
-  let formUpdateData = new FormData(document.forms.updateExpense);
+function updateExpense(){
+  let formUpdateData = new FormData(document.forms.formExpense);
   let xhrUpdate = new XMLHttpRequest();
   xhrUpdate.open("POST", "Main/updateExpense");
   xhrUpdate.send(formUpdateData);

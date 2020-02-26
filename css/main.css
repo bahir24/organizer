@@ -102,11 +102,11 @@ th {
     position: relative;
     overflow: hidden;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 td {
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 td:last-child,
@@ -123,12 +123,6 @@ td:last-child {
     justify-content: flex-end;
 }
 
-td:first-child,
-th:first-child {
-    flex: 0.5;
-    width: 90px;
-}
-
 td:nth-child(5),
 th:nth-child(5) {
     flex: 2;
@@ -137,6 +131,12 @@ th:nth-child(5) {
 
 td:nth-child(4),
 th:nth-child(4) {
+    flex: 0.5;
+    width: 90px;
+}
+
+td:nth-child(3),
+th:nth-child(3) {
     flex: 0.5;
     width: 90px;
 }
@@ -261,7 +261,7 @@ tr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 400px;
+    min-width: 100%;
 }
 
 
@@ -277,7 +277,6 @@ tr {
 .btn-dropright-submenu {
     flex: 2 !important;
     white-space: nowrap;
-    /* min-width: 200px; */
 }
 
 .btn-dropright-toggle {

@@ -9,11 +9,7 @@ use app\services\ExpenseQueryBuilder;
 class MainController extends ControllerBase
 {
     public $sectionSpecify = "filter";
-    public $sortButtons = [
-        [
-          "sortField" => "purchaseDate",
-          "buttonText" => "Дата",
-        ],
+    public $sortButtons = [        
         [
           "sortField" => "categoryName",
           "buttonText" => "Категория",
@@ -21,6 +17,10 @@ class MainController extends ControllerBase
         [
           "sortField" => "subcategoryName",
           "buttonText" => "Подкатегория",
+        ],
+        [
+          "sortField" => "purchaseDate",
+          "buttonText" => "Дата",
         ],
         [
           "sortField" => "price",

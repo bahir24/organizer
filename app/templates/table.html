@@ -23,10 +23,10 @@
         </thead>
         <tbody class="table-expenses-body">
             {% for expense in arrExpense %}
-                <tr class="expense-row-{{ expense.id }}">
-                    <th scope="row">{{ expense.purchaseDate }}</th>
-                    <td data-category-id="{{ expense.categoryId }}">{{ expense.categoryName }}</td>
+                <tr class="expense-row-{{ expense.id }}">                    
+                    <th scope="row" data-category-id="{{ expense.categoryId }}">{{ expense.categoryName }}</th>
                     <td data-subcategory-id="{{ expense.subcategoryId }}">{{ expense.subcategoryName }}</td>
+                    <td>{{ expense.purchaseDate }}</td>
                     <td>{{ expense.price }}</td>
                     <td>{{ expense.description }}</td>
                     <td>

@@ -14,8 +14,6 @@
 			<div class="col-3"></div>
 			<div class="col-3">
 				<h6 class="mb-1">По принадлежности</h6>
-				{# {% include "categoryInput.html" %}
-				{% include "subcategoryInput.html" %} #}
 				{% include "categoryBlock.html" %}
 			</div>
 			<div class="col-3">
@@ -33,7 +31,7 @@
 				<button type="reset" onclick="location.href = ''" form="filterQuery" class="btn btn-secondary btn-block">Сбросить фильры</button>
 			</div>
 			<div class="col-4">
-				<button type="button" class="btn btn-success btn-block" data-toggle="modal" onclick="insertDate();" data-target="#addExpense">Добавить расход</button>
+				<button type="button" class="btn btn-success btn-block" data-toggle="modal" onclick="prepareFormToAdd();" data-target="#expenseModal">Добавить расход</button>
 			</div>
 			<div class="col-4">
 				<button type="submit" form="filterQuery" class="btn btn-primary btn-block">Фильтровать</button>

@@ -34,8 +34,4 @@ function resetCheckedOnSelect(pushedBtn) {
     sortButton.querySelector('.img-sort-desc').classList.remove('sort-img-hidden');
     }
   }
-    
-   
-    
-  
 }
