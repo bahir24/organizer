@@ -33,9 +33,6 @@ class MainController extends ControllerBase
         $queryParams = QueryParams::CreateFromQuery();
         $queryWithValues = ExpenseQueryBuilder::BuildQuery($queryParams);
         $this->arrExpense = $this->store->getByFilter($queryWithValues);
-        foreach ($this->arrExpense as $fieldData) {
-            $fieldData->purchaseDate = date('Y-m-d', $fieldData->purchaseDate);            
-        }
         $this->arrFilter = $queryParams;
         echo $this->template->render(['arrFilter' => $this->arrFilter, 'arrExpense' => $this->arrExpense, 'arrCategories' => $this->arrCategories, 'arrSubcategories' => $this->arrSubcategories, 'sortButtons' => $this->sortButtons]);
     }

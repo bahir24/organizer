@@ -3,34 +3,21 @@
 	<input class="category-id-input" type="hidden" name="categoryId" value="{{ arrFilter.categoryId }}">
 	<input class="subcategory-id-input" type="hidden" name="subcategoryId" value="{{ arrFilter.subcategoryId }}">
 	<button class="btn btn-sm btn-secondary dropdown-toggle category-dropdown-btn pt-1" type="button" id="menuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		{% if arrFilter.categoryId %}
-			{% for category in arrCategories %}
-				{% if category.id == arrFilter.categoryId %}
-					{{ category.name }}
-					{%  if arrFilter.subcategoryId %}
-						{% for subcategory in arrSubcategories %}
-							{% if subcategory.id == arrFilter.subcategoryId %}
-								&#8658;
-								{{ subcategory.name }}
-							{% endif %}
-						{% endfor %}
-					{% endif %}
-				{% endif %}
-			{% endfor %}
-		{% else %}
-			Выберите категорию
+
+		{{ arrCategories|filter(category => category.id == arrFilter.categoryId).0.name|default('Выберите категорию') }}
+		{% if arrFilter.subcategoryId %}
+			&#8658;
+			{{ arrSubcategories|filter(subcategory => subcategory.id == arrFilter.subcategoryId).0.name }}
 		{% endif %}
 	</button>
 	<div class="dropdown-menu p-0 flex-column" aria-labelledby="menuButton">
 		{% for category in arrCategories %}
 			<div class="dropright btn-group btn-category">
-				<button class="btn btn-sm btn-outline-primary btn-dropright-main" type="button" data-category-id="{{ category.id }}" onclick="updateCategoryInputValue(this);">{{ category.name }}</button>
+				<button class="btn btn-sm btn-outline-primary btn-dropright-main" type="button" data-category-id="{{ category.id }}" onclick="selectCategory(this);">{{ category.name }}</button>
 				<button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split btn-submenu p-0 btn-dropright-toggle" id="subMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="showSubCategories(event, this);"></button>
 				<div class="dropdown-menu dropdown-submenu p-0" aria-labelledby="subMenuButton">
-					{% for subcategory in arrSubcategories %}
-						{% if category.id == subcategory.categoryId %}
-							<button type="button" class="btn btn-sm btn-outline-primary btn-dropright-submenu w-100" data-subcategory-id="{{ subcategory.id }}" data-category-id="{{ subcategory.categoryId }}" onclick="updateCategoryInputValue(this);">{{ subcategory.name }}</button>
-						{% endif %}
+					{% for subcategory in arrSubcategories|filter(subcategory => subcategory.categoryId == category.id) %}
+						<button type="button" class="btn btn-sm btn-outline-primary btn-dropright-submenu w-100" data-subcategory-id="{{ subcategory.id }}" data-category-id="{{ subcategory.categoryId }}" onclick="selectCategory(this);">{{ subcategory.name }}</button>
 					{% endfor %}
 				</div>
 			</div>

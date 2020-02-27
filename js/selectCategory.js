@@ -7,7 +7,7 @@ function showSubCategories(event, clickedButton) {
     clickedButton.nextElementSibling.classList.add("show");
 }
 
-function updateCategoryInputValue(clickedCategoryButton) {
+function selectCategory(clickedCategoryButton) {
     let expenseCategoryBlock = clickedCategoryButton.closest('.expense-category-input');
     expenseCategoryButton = expenseCategoryBlock.querySelector('.category-dropdown-btn');
     expenseCategoryInput = expenseCategoryBlock.querySelector('.category-id-input');
