@@ -1,6 +1,6 @@
 const sortButtons = document.querySelector('.table-expenses-head').querySelectorAll('button');
 
-function sortButton(pushedBtn) {
+function sortExpenses(pushedBtn) {
   resetCheckedOnSelect(pushedBtn);
 
   let ascImg = pushedBtn.querySelector('.img-sort-asc');

@@ -25,7 +25,7 @@ var footerSum = {
 };
 
 
-function countByPeriods() {
+function countSumFooter() {
     
     for (var tableRowsIndex = 1; tableRowsIndex < tableRows.length; tableRowsIndex++) {
         let tableRow = tableRows[tableRowsIndex];
@@ -44,7 +44,7 @@ function countByPeriods() {
     }
 }
 
-countByPeriods();
+countSumFooter();
 
 footerDataFields[0].textContent = footerSum.sumYear;
 footerDataFields[1].textContent = footerSum.sumMonth;

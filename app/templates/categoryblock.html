@@ -9,6 +9,7 @@
 			&#8658;
 			{{ arrSubcategories|filter(subcategory => subcategory.id == arrFilter.subcategoryId).0.name }}
 		{% endif %}
+		
 	</button>
 	<div class="dropdown-menu p-0 flex-column" aria-labelledby="menuButton">
 		{% for category in arrCategories %}

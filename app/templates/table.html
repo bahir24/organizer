@@ -1,25 +1,7 @@
 <div class="row table-wrapper">
     <table class="table table-sm table-striped table-expenses">
         <thead class="table-expenses-head">
-            <tr>
-                {% for sortButton in sortButtons %}
-                    <th scope="col" class="date-sort">{{ sortButton.buttonText }}                                    
-                        <button type="button" class="sort-query-btn" data-order-field="{{ sortButton.sortField }}" onclick="sortButton(this)">
-                            {% if arrFilter.orderField == sortButton.sortField and arrFilter.order == "ASC" %}
-                            <img src="/img/sort_up.svg" class="img-sort-asc">
-                            <img src="/img/sort_down.svg" class="img-sort-desc sort-img-hidden">
-                            {% else %}
-                            <img src="/img/sort_up.svg" class="img-sort-asc sort-img-hidden">
-                            <img src="/img/sort_down.svg" class="img-sort-desc">
-                            {% endif %}
-                        </button>                 
-                    </th>                 
-                {% endfor %}    
-                <th scope="col">            
-                <h6 class="sort-btn-head">Примечание</h6>            
-                </th>
-                <th scope="col">Действия</th>
-            </tr>
+            {% include "tablehead.html" %}
         </thead>
         <tbody class="table-expenses-body">
             {% for expense in arrExpense %}

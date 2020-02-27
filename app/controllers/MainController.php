@@ -9,24 +9,24 @@ use app\services\ExpenseQueryBuilder;
 class MainController extends ControllerBase
 {
     public $sectionSpecify = "filter";
-    public $sortButtons = [        
-        [
-          "sortField" => "categoryName",
-          "buttonText" => "Категория",
-        ],
-        [
-          "sortField" => "subcategoryName",
-          "buttonText" => "Подкатегория",
-        ],
-        [
-          "sortField" => "purchaseDate",
-          "buttonText" => "Дата",
-        ],
-        [
-          "sortField" => "price",
-          "buttonText" => "Цена",
-        ],
-      ];
+    // public $sortButtons = [        
+    //     [
+    //       "sortField" => "categoryName",
+    //       "buttonText" => "Категория",
+    //     ],
+    //     [
+    //       "sortField" => "subcategoryName",
+    //       "buttonText" => "Подкатегория",
+    //     ],
+    //     [
+    //       "sortField" => "purchaseDate",
+    //       "buttonText" => "Дата",
+    //     ],
+    //     [
+    //       "sortField" => "price",
+    //       "buttonText" => "Цена",
+    //     ],
+    //   ];
 
     public function indexAction()
     {
@@ -34,7 +34,7 @@ class MainController extends ControllerBase
         $queryWithValues = ExpenseQueryBuilder::BuildQuery($queryParams);
         $this->arrExpense = $this->store->getByFilter($queryWithValues);
         $this->arrFilter = $queryParams;
-        echo $this->template->render(['arrFilter' => $this->arrFilter, 'arrExpense' => $this->arrExpense, 'arrCategories' => $this->arrCategories, 'arrSubcategories' => $this->arrSubcategories, 'sortButtons' => $this->sortButtons]);
+        echo $this->template->render(['arrFilter' => $this->arrFilter, 'arrExpense' => $this->arrExpense, 'arrCategories' => $this->arrCategories, 'arrSubcategories' => $this->arrSubcategories]);
     }
 
     public function deleteAction()
