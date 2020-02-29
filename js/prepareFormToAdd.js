@@ -1,7 +1,7 @@
 function prepareFormToAdd(){
     let addExpenseForm = document.forms.formExpense;
     expenseSentButton = document.querySelector('.btn-form-expense');
-    expenseSentButton.textContent = 'Добавить';
+    expenseSentButton.textContent = 'Записать';
     expenseSentButton.setAttribute('onclick', 'addExpense();');
     formFields = addExpenseForm.querySelectorAll('input, textarea');
     for(formFieldsIndex = 0; formFieldsIndex < formFields.length; formFieldsIndex++)
