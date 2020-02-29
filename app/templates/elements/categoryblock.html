@@ -4,10 +4,10 @@
 	<input class="subcategory-id-input" type="hidden" name="subcategoryId" value="{{ arrFilter.subcategoryId }}">
 	<button class="btn btn-sm btn-secondary dropdown-toggle category-dropdown-btn pt-1" type="button" id="menuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-		{{ arrCategories|filter(category => category.id == arrFilter.categoryId).0.name|default('Выберите категорию') }}
+		{{ arrCategories|filter(category => category.id == arrFilter.categoryId)|first.name|default('Выберите категорию') }}
 		{% if arrFilter.subcategoryId %}
 			&#8658;
-			{{ arrSubcategories|filter(subcategory => subcategory.id == arrFilter.subcategoryId).0.name }}
+			{{ arrSubcategories|filter(subcategory => subcategory.id == arrFilter.subcategoryId)|first.name }}
 		{% endif %}
 		
 	</button>
