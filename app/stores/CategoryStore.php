@@ -18,6 +18,8 @@ class CategoryStore extends StoreBase
         $sql = "INSERT INTO $this->table(name) VALUES (:name)";
         $query = $this->pdo->prepare($sql);
         $query->execute(['name' => $name]);
+
+        return $this->getLastId();
     }
 
     public function update(CategoryEntity $category)
@@ -25,9 +27,8 @@ class CategoryStore extends StoreBase
         $sql = "UPDATE $this->table SET name = :name WHERE id = :id";
         $query = $this->pdo->prepare($sql);
         $query->execute(['name' => $category->name, 'id' => $category->id]);
+        
+        return $this->getLastId();
     }
-    public function tableName()
-    {
-        return $this->table;
-    }
+
 }

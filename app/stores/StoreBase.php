@@ -14,7 +14,6 @@ class StoreBase
     public function __construct($db, $table)
     {
         $this->table = $table;
-
         $this->pdo = new PDO('sqlite:' . $db);
         $this->pdo->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->SetAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -25,6 +24,7 @@ class StoreBase
         $sql = "SELECT * FROM $this->table WHERE id = $id";
         $query = $this->pdo->query($sql);
         $query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
+        
         return $query->fetch();
     }
 
@@ -33,6 +33,7 @@ class StoreBase
         $sql = "SELECT * FROM $this->table";
         $query = $this->pdo->query($sql);
         $query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
+
         return $query->fetchAll();
     }
 
@@ -42,30 +43,37 @@ class StoreBase
         $query = $this->pdo->query($sql);
         $query->setFetchMode(PDO::FETCH_ASSOC);
         $result = $query->fetch();
+
         return (int) $result["count"];
     }
 
     public function getPaged(QueryParams $queryParams)
     {
         $skip = $queryParams->pageNumber * $queryParams->pageSize;
-        $sql = "SELECT * FROM $this->table ORDER BY 
-	$queryParams->orderField $queryParams->order LIMIT $skip, $queryParams->pageSize";
+        $sql = "SELECT * FROM $this->table ORDER BY $queryParams->orderField $queryParams->order LIMIT $skip, $queryParams->pageSize";
         $query = $this->pdo->query($sql);
         $query->setFetchMode(PDO::FETCH_CLASS, $this->entity);
+
         return $query->fetchAll();
     }
 
-
+    public function getLastId()
+    {
+        $sql = "SELECT MAX(id) FROM $this->table";
+        $query = $this->pdo->query($sql);
+        
+        return $query->fetchAll();
+    }
 
     public function delete(int $id)
     {
         $sql = "DELETE FROM $this->table WHERE id = $id";
         $this->pdo->exec($sql);
+
+        return $id;
     }
 
-    protected function getTablesNames()
-    {
-    }
+    
 
     protected function getKeys($obj, $excludes = null)
     {

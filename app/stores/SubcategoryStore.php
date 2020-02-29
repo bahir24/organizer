@@ -17,13 +17,28 @@ class SubcategoryStore extends StoreBase
     {
         $sql = "INSERT INTO $this->table(categoryId, name) VALUES(:name, :categoryId)";
         $query = $this->pdo->prepare($sql);
-        $query->execute(['categoryId' => $categoryId, 'name' => $name]);
+        $query->execute(
+            [
+                'categoryId' => $categoryId,
+                'name' => $name
+            ]
+        );
+        
+        return $this->getLastId();
     }
 
-    public function update(SubcategoryEntity $category)
+    public function update(SubcategoryEntity $subcategory)
     {
         $sql = "UPDATE $this->table SET name = :name, categoryId = :categoryId WHERE id = :id";
         $query = $this->pdo->prepare($sql);
-        $query->execute(['categoryId' => $category->categoryId, 'name' => $category->name, 'id' => $category->id]);
+        $query->execute(
+            [
+                'categoryId' => $subcategory->subcategoryId,
+                'name' => $subcategory->name,
+                'id' => $subcategory->id
+            ]
+        );
+
+        return $this->getLastId();
     }
 }

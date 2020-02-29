@@ -25,6 +25,8 @@ class ExpensesStore extends StoreBase
         $sql = "INSERT INTO $this->table($columns) VALUES($placeholders)";
         $query = $this->pdo->prepare($sql);
         $query->execute($values);
+        
+        return $this->getLastId();
     }
 
     public function update(ExpenseEntity $expense)
@@ -36,6 +38,8 @@ class ExpensesStore extends StoreBase
         $sql = "UPDATE $this->table SET $setPairs WHERE id = :id";
         $query = $this->pdo->prepare($sql);
         $query->execute($values);
+        
+        return $this->getLastId();
     }
 
     public function getAll()
