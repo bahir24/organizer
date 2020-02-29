@@ -1,12 +1,11 @@
 <?php
 
 use app\core\Router;
+use app\Config;
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once __DIR__ . '/vendor/autoload.php';
 
-define('ROOT', __DIR__);
-
-require_once ROOT . '/vendor/autoload.php';
+foreach(Config::$php as $setting => $value)
+ini_set($setting, $value);
 
 Router::start();

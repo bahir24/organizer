@@ -4,5 +4,9 @@ namespace app;
 
 class Config
 {
-    static $dbFileName = 'db/organizer.db';
+    static $dataBase = 'db/organizer.db';
+    static $php = [
+        'error_reporting' => 'E_ALL'
+    ];
+
 }

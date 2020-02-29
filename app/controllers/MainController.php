@@ -9,24 +9,6 @@ use app\services\ExpenseQueryBuilder;
 class MainController extends ControllerBase
 {
     public $sectionSpecify = "filter";
-    // public $sortButtons = [        
-    //     [
-    //       "sortField" => "categoryName",
-    //       "buttonText" => "Категория",
-    //     ],
-    //     [
-    //       "sortField" => "subcategoryName",
-    //       "buttonText" => "Подкатегория",
-    //     ],
-    //     [
-    //       "sortField" => "purchaseDate",
-    //       "buttonText" => "Дата",
-    //     ],
-    //     [
-    //       "sortField" => "price",
-    //       "buttonText" => "Цена",
-    //     ],
-    //   ];
 
     public function indexAction()
     {
