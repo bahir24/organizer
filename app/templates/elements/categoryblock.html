@@ -2,7 +2,7 @@
 
 	<input class="category-id-input" type="hidden" name="categoryId" value="{{ arrFilter.categoryId }}">
 	<input class="subcategory-id-input" type="hidden" name="subcategoryId" value="{{ arrFilter.subcategoryId }}">
-	<button class="btn btn-sm btn-secondary dropdown-toggle category-dropdown-btn pt-1" type="button" id="menuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	<button class="btn btn-sm btn-secondary dropdown-toggle category-dropdown-btn pt-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
 		{{ arrCategories|filter(category => category.id == arrFilter.categoryId)|first.name|default('Выберите категорию') }}
 		{% if arrFilter.subcategoryId %}
@@ -11,12 +11,12 @@
 		{% endif %}
 		
 	</button>
-	<div class="dropdown-menu p-0 flex-column" aria-labelledby="menuButton">
+	<div class="dropdown-menu p-0 flex-column">
 		{% for category in arrCategories %}
 			<div class="dropright btn-group btn-category">
 				<button class="btn btn-sm btn-outline-primary btn-dropright-main" type="button" data-category-id="{{ category.id }}" onclick="selectCategory(this);">{{ category.name }}</button>
-				<button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split btn-submenu p-0 btn-dropright-toggle" id="subMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="showSubCategories(event, this);"></button>
-				<div class="dropdown-menu dropdown-submenu p-0" aria-labelledby="subMenuButton">
+				<button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-split btn-submenu p-0 btn-dropright-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="showSubCategories(event, this);"></button>
+				<div class="dropdown-menu dropdown-submenu p-0">
 					{% for subcategory in arrSubcategories|filter(subcategory => subcategory.categoryId == category.id) %}
 						<button type="button" class="btn btn-sm btn-outline-primary btn-dropright-submenu w-100" data-subcategory-id="{{ subcategory.id }}" data-category-id="{{ subcategory.categoryId }}" onclick="selectCategory(this);">{{ subcategory.name }}</button>
 					{% endfor %}

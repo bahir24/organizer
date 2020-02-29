@@ -1,4 +1,4 @@
-<div class="modal fade" id="expenseModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="expenseModal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -12,32 +12,24 @@
 					<input type="hidden" name="id" form="formExpense">
 					<div class="form-group">
 						{% include "categoryblock.html" %}
-					</div>					
+					</div>
 					<div class="input-group mb-2">
-						<label class="streched">
-							<h6 class="mb-1">Дата</h6>
-							<input type="date" form="formExpense" name="purchaseDate" class="form-control expense-day">
+						<label class="streched">Дата<input type="date" form="formExpense" name="purchaseDate" class="form-control expense-day">
 						</label>
 					</div>
 					<div class="input-group mb-2">
-						<label class="streched">
-							<h6 class="mb-1">Стоимость</h6>
-							<div class="d-flex">
-								<div class="input-group-append streched">
-									<input type="number" form="formExpense" name="price" class="form-control input-calc">
-									<button class="btn btn-outline-secondary btn-calc" type="button">
-										<img src="/img/calc.svg" class="icon" alt="calc">
-									</button>
-								</div>
-							</div>
-						</label>
+						<h6 class="mb-1">Стоимость</h6>
+						<div class="input-group-append streched">
+							<input type="number" form="formExpense" name="price" class="form-control input-calc">
+							<button class="btn btn-outline-secondary btn-calc" type="button">
+								<img src="/img/calc.svg" class="icon" alt="calc">
+							</button>
+						</div>
 					</div>
 					<div class="input-group">
-						<label class="streched">
-							<h6 class="mb-1">Примечание</h6>
-							<textarea name="description" form="formExpense" class="form-control"></textarea>
+						<label class="streched">Примечание<textarea name="description" form="formExpense" class="form-control"></textarea>
 						</label>
-					</div>					
+					</div>
 				</form>
 			</div>
 			<div class="modal-footer">
