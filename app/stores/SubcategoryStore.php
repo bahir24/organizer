@@ -22,8 +22,7 @@ class SubcategoryStore extends StoreBase
                 'categoryId' => $categoryId,
                 'name' => $name
             ]
-        );
-        
+        );        
         return $this->getLastId();
     }
 
@@ -38,7 +37,7 @@ class SubcategoryStore extends StoreBase
                 'id' => $subcategory->id
             ]
         );
-
-        return $this->getLastId();
+        if(!is_null($query))
+        return $subcategory->id;
     }
 }

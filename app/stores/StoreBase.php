@@ -67,9 +67,14 @@ class StoreBase
 
     public function delete(int $id)
     {
-        $sql = "DELETE FROM $this->table WHERE id = $id";
-        $this->pdo->exec($sql);
-
+        $sql = "DELETE FROM $this->table WHERE id = :id";
+        $query = $this->pdo->prepare($sql);
+        $query->execute(
+            [
+                'id' => $id
+            ]
+        );
+        if(!is_null($query))
         return $id;
     }
 
