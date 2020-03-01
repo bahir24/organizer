@@ -27,8 +27,18 @@ class ControllerBase
         $subCategoryStore = new SubcategoryStore(Config::$dataBase);        
         $this->arrSubcategories = $subCategoryStore->getAll();
 
-        $loader = new \Twig\Loader\FilesystemLoader(['app/templates', 'app/templates/blocks', 'app/templates/elements']);
+        $loader = new \Twig\Loader\FilesystemLoader(
+            [
+                'app/templates',
+                'app/templates/blocks',
+                'app/templates/elements'
+            ]
+        );
         $twig = new \Twig\Environment($loader);
-        $this->template = $twig->load('layout.html', ['strict_variables' => true]);        
+        $this->template = $twig->load('layout.html', 
+            [
+                'strict_variables' => true
+            ]
+        );
     }
 }

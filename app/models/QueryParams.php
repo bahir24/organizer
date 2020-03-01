@@ -26,16 +26,12 @@ class QueryParams
 
     public static function CreateFromQuery()
     {
-        if (is_null($_POST)) {
-            return null;
+        if (!is_null($_POST)) {            
+            $result = new QueryParams;
+            foreach ($_POST as $name => $value) {
+                $result->$name = $value;
+            }
+            return $result;
         }
-
-        $result = new QueryParams;
-
-        foreach ($_POST as $name => $value) {
-            $result->$name = $value;
-        }
-        
-        return $result;
     }
 }
