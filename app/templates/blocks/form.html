@@ -1,0 +1,41 @@
+<div class="modal fade" id="expenseModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Добавить расход</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form class="w-100" id="formExpense" name="formExpense">
+					<input type="hidden" name="id" form="formExpense">
+					<div class="form-group">
+						{% include "categoryblock.html" %}
+					</div>
+					<div class="input-group mb-2">
+						<label class="streched">Дата<input type="date" form="formExpense" name="purchaseDate" class="form-control expense-day">
+						</label>
+					</div>
+					<div class="input-group mb-2">
+						<h6 class="mb-1">Стоимость</h6>
+						<div class="input-group-append streched">
+							<input type="number" form="formExpense" name="price" class="form-control input-calc" required>
+							<button class="btn btn-outline-secondary btn-calc" type="button">
+								<img src="img/calc.svg" class="icon" alt="calc">
+							</button>
+						</div>
+					</div>
+					<div class="input-group">
+						<label class="streched">Примечание<textarea name="description" form="formExpense" class="form-control"></textarea>
+						</label>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Отмена</button>
+				<button type="button" onclick="addExpense();" form="formExpense" class="btn btn-success btn-lg btn-form-expense">Записать</button>
+			</div>
+		</div>
+	</div>
+</div>

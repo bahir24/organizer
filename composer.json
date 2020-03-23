@@ -1,0 +1,26 @@
+{
+    "name": "mihail/organizer",
+    "description": "Project for learning PHP. Web application for recording everyday expenses.",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mihail",
+            "email": "7074033@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": { 
+            "app\\core\\": "app/core/",
+            "app\\controllers\\": "app/controllers/",
+            "app\\": "app/",
+            "app\\entities\\": "app/entities/",
+            "app\\models\\": "app/models/",
+            "app\\services\\": "app/services/",
+            "app\\stores\\": "app/stores/"
+        }
+    }
+}

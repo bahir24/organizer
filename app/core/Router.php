@@ -2,51 +2,49 @@
 
 namespace app\core;
 
-use app\controllers\MainController;
-
 class Router
 {
+    public static function start()
+    {
+        $controllersNamespace = 'app\\controllers\\';
 
+        $controllerName = 'Main';
+        $actionName = 'index';
 
-	public static function start()
-	{
-		$controllersNamespace = 'app\\controllers\\';
-		
-		$exclusions = array("css", "js");
+        $arrRoutes = explode('/', $_SERVER['REQUEST_URI']);
+        if (!empty($arrRoutes[1])) {
+            $controllerName = $arrRoutes[1];
+        }
 
-		$controllerName = 'Main';
-		$actionName = 'index';
-		
-		$arrRoutes = explode('/', $_SERVER['REQUEST_URI']);
-		if (!empty($arrRoutes[1])) {
-			$controllerName = $arrRoutes[1];
-		}
+        if (!empty($arrRoutes[2])) {
+            $actionName = $arrRoutes[2];
+        }
 
-		if (!empty($arrRoutes[2])) {
-			$actionName = $arrRoutes[2];
-		}
-				
-		$controllerName .= 'Controller';
-		$controllerName = $controllersNamespace . $controllerName;
-		$actionName .= 'Action';
+        $controllerName .= 'Controller';
+        $actionName .= 'Action';
 
-		if (class_exists($controllerName)) {
-			$controller = new $controllerName();
-			
-			if (method_exists($controller, $actionName)) 
-				$controller->$actionName();
-			else 
-				Router::ErrorPage404();
-			
-		}
-	}
+        $controllerName = $controllersNamespace . $controllerName;
 
-	public static function ErrorPage404()
-	{
-		$host = 'http://'.$_SERVER['HTTP_HOST'].'/';
-		header('HTTP/1.1 404 Not Found');
-		header("Status: 404 Not Found");
-		header('Location:'.$host.'404');
-		require_once '404.html';
-	}
+        if (class_exists($controllerName)) {
+            $controller = new $controllerName();
+            if (method_exists($controller, $actionName)) {
+                $controller->$actionName();
+            } else {
+                $errorMessage = "method" . $actionName . " of controller" . $controllerName . "is not exists";
+                Router::ErrorPage404($errorMessage);
+            }
+        } else {
+            $errorMessage = "controller " . $controllerName . " is not exists";
+            Router::ErrorPage404($errorMessage);
+        }
+    }
+
+    public static function ErrorPage404($errorMessage)
+    {
+        $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+        header('HTTP/1.1 404 Not Found');
+        header("Status: 404 Not Found");
+        header('Location:' . $host . '404');
+        require_once '404.php';
+    }
 }

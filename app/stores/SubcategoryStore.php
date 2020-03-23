@@ -6,24 +6,38 @@ use app\entities\SubcategoryEntity;
 
 class SubcategoryStore extends StoreBase
 {
-	protected $entity = SubcategoryEntity::class;
+    protected $entity = SubcategoryEntity::class;
 
-	public function __construct($db)
-	{
-		parent::__construct($db, 'subcategories');
-	}
+    public function __construct($db)
+    {
+        parent::__construct($db, 'subcategories');
+    }
 
-	public function add($categoryId, $name)
-	{
-		$sql = "INSERT INTO $this->table(categoryId, name) VALUES(:name, :categoryId)";
-		$query = $this->pdo->prepare($sql);
-		$query->execute(['categoryId' => $categoryId, 'name' => $name]);
-	}
+    public function add($categoryId, $name)
+    {
+        $sql = "INSERT INTO $this->table(categoryId, name) VALUES(:name, :categoryId)";
+        $query = $this->pdo->prepare($sql);
+        $query->execute(
+            [
+                'categoryId' => $categoryId,
+                'name' => $name
+            ]
+        );        
+        return $this->getLastId();
+    }
 
-	public function update(SubcategoryEntity $category)
-	{
-		$sql = "UPDATE $this->table SET name = :name, categoryId = :categoryId WHERE id = :id";
-		$query = $this->pdo->prepare($sql);
-		$query->execute(['categoryId' => $category->categoryId, 'name' => $category->name, 'id' => $category->id]);
-	}
+    public function update(SubcategoryEntity $subcategory)
+    {
+        $sql = "UPDATE $this->table SET name = :name, categoryId = :categoryId WHERE id = :id";
+        $query = $this->pdo->prepare($sql);
+        $query->execute(
+            [
+                'categoryId' => $subcategory->subcategoryId,
+                'name' => $subcategory->name,
+                'id' => $subcategory->id
+            ]
+        );
+        if(!is_null($query))
+        return $subcategory->id;
+    }
 }

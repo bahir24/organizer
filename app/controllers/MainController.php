@@ -14,24 +14,30 @@ class MainController extends ControllerBase
     {
         $queryParams = QueryParams::CreateFromQuery();
         $queryWithValues = ExpenseQueryBuilder::BuildQuery($queryParams);
+
         $this->arrExpense = $this->store->getByFilter($queryWithValues);
-        $this->viewBuild->arrFilter = $queryParams;
-        $this->viewBuild->sectionFeatures = $this->sectionSpecify;
-        $this->viewBuild->arrExpense = $this->arrExpense;
-        $this->viewBuild->pageRender();
+        $this->arrFilter = $queryParams;
+
+        echo $this->template->render(
+            [
+                'arrFilter' => $this->arrFilter,
+                'arrExpense' => $this->arrExpense,
+                'arrCategories' => $this->arrCategories,
+                'arrSubcategories' => $this->arrSubcategories
+            ]
+        );
     }
 
-    public function deleteAction()
+    public function deleteExpenseAction()
     {
         $queryParams = QueryParams::CreateFromQuery();
-        echo $queryParams->deleteExpenseId;
         $this->store->delete($queryParams->deleteExpenseId);
     }
 
     public function addExpenseAction()
     {
         $exEntity = new ExpenseEntity;
-        $exEntity->postStrToObject($_POST);      
+        $exEntity->postStrToObject($_POST);
         $this->store->add($exEntity);
     }
 

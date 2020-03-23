@@ -1,5 +1,5 @@
-function addButton(){
-  let formData = new FormData(document.forms.addExpense);
+function addExpense(){
+  let formData = new FormData(document.forms.formExpense);  
   let xhrAdd = new XMLHttpRequest();
   xhrAdd.open("POST", "Main/addExpense");
   xhrAdd.send(formData);

@@ -1,0 +1,33 @@
+<tr>
+
+	{% set sortButtons = [
+        { 
+            sortField: 'categoryName',
+            buttonText: 'Категория',
+        },{
+            sortField: 'subcategoryName',
+            buttonText: 'Подкатегория',
+        },{
+            sortField: 'purchaseDate',
+            buttonText: 'Дата',
+        },{
+            sortField: 'price',
+            buttonText: 'Цена',
+        }
+      ]
+ %}
+	{% for sortButton in sortButtons %}
+		<th scope="col" class="date-sort">{{ sortButton.buttonText }}<button type="button" class="sort-query-btn" data-order-field="{{ sortButton.sortField }}" onclick="sortExpenses(this)">
+				{% if arrFilter.orderField == sortButton.sortField and arrFilter.order == "ASC" %}
+					<img src="img/sort_up.svg" class="img-sort-asc" alt="sort in ascending order">
+					<img src="img/sort_down.svg" class="img-sort-desc sort-img-hidden" alt="sort in descending order">
+				{% else %}
+					<img src="img/sort_up.svg" class="img-sort-asc sort-img-hidden" alt="sort in ascending order">
+					<img src="img/sort_down.svg" class="img-sort-desc" alt="sort in descending order">
+				{% endif %}
+			</button>
+		</th>
+	{% endfor %}
+	<th scope="col">Примечание</th>
+	<th scope="col">Действия</th>
+</tr>

@@ -1,3 +1,5 @@
 .vscode
 .gitignore
-schema_images
+/vendor/
+/notes/
+/quests/
