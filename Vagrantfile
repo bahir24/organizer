@@ -7,14 +7,15 @@ Vagrant.configure("2") do |config|
     vb.memory = "1024"
   end
   
-  config.vm.synced_folder "/", "/var/www/html"
+  config.vm.synced_folder ".", "/var/www/html"
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update    
     apt-get -y install nginx php php-fpm php7.3-sqlite sqlite3
-    cp -f /vagrant/organizer.conf /etc/nginx/sites-available/default
+    cp -f /var/www/html/organizer.conf /etc/nginx/sites-available/default
     apt-get -y remove apache2
     sudo systemctl start nginx.service
+    php /var/www/html/composer install
+    chmod -R 777 /var/www/html/db
 SHELL
-
 end
