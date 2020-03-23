@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
     vb.memory = "1024"
   end
   
-  config.vm.synced_folder "organizer/", "/var/www/html"
+  config.vm.synced_folder "/", "/var/www/html"
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update    
